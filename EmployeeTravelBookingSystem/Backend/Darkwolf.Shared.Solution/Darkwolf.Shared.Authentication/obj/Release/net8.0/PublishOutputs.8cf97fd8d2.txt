@@ -1,0 +1,13 @@
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Darkwolf.Shared.Authentication.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Darkwolf.Shared.Authentication.deps.json
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Darkwolf.Shared.Authentication.pdb
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.Extensions.Primitives.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.IdentityModel.Logging.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.IdentityModel.Tokens.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\System.IdentityModel.Tokens.Jwt.dll

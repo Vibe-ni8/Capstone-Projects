@@ -1,0 +1,13 @@
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\bin\Release\net8.0\Darkwolf.Shared.Common.deps.json
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\bin\Release\net8.0\Darkwolf.Shared.Common.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\bin\Release\net8.0\Darkwolf.Shared.Common.pdb
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.DWCommon.resources
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.csproj.GenerateResource.cache
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.AssemblyInfoInputs.cache
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.AssemblyInfo.cs
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.csproj.CoreCompileInputs.cache
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\refint\Darkwolf.Shared.Common.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\Darkwolf.Shared.Common.pdb
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Common\obj\Release\net8.0\ref\Darkwolf.Shared.Common.dll

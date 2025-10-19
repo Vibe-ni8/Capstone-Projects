@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "Darkwolf.AuthService.Solution.Controllers.AuthController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/Auth/password/forgot",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Darkwolf.AuthService.Solution.DTO.ForgotPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Darkwolf.AuthService.Solution.Controllers.AuthController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Auth/password/reset",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Darkwolf.AuthService.Solution.DTO.ResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Darkwolf.AuthService.Solution.Controllers.AuthController",
+    "Method": "Token",
+    "RelativePath": "api/Auth/token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Darkwolf.AuthService.Solution.DTO.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

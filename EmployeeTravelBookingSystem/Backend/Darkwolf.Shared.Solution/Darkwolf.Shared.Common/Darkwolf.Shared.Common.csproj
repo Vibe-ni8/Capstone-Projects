@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<Version>1.0.0</Version>
+	<PackageId>Darkwolf.Shared.Common</PackageId>
+	<Authors>Vicky</Authors>
+	<Company>Darkwolf</Company>
+	<Description>A shared library for Darkwolf projects</Description>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PackAsTool>False</PackAsTool>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="DWCommon.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DWCommon.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="DWCommon.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DWCommon.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

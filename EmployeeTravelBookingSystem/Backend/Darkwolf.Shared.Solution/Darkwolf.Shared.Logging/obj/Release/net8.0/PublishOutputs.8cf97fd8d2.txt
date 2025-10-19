@@ -1,0 +1,5 @@
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Darkwolf.Shared.Logging.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Darkwolf.Shared.Logging.deps.json
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Darkwolf.Shared.Logging.pdb
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Publish\Microsoft.Extensions.Logging.Abstractions.dll

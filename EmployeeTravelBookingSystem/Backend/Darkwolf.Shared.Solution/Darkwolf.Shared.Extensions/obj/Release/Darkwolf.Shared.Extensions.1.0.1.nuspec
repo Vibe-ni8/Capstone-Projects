@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Darkwolf.Shared.Extensions</id>
+    <version>1.0.1</version>
+    <authors>Vicky</authors>
+    <description>A shared library for Darkwolf projects</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Darkwolf.Shared.Authentication" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Darkwolf.Shared.Common" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Darkwolf.Shared.Logging" version="1.0.1" exclude="Build,Analyzers" />
+        <dependency id="Darkwolf.Shared.Middleware" version="1.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Extensions\bin\Release\net8.0\Darkwolf.Shared.Extensions.dll" target="lib\net8.0\Darkwolf.Shared.Extensions.dll" />
+  </files>
+</package>

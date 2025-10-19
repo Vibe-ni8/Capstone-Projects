@@ -1,0 +1,16 @@
+@Darkwolf.AuthService.Solution_HostAddress = https://localhost:7070
+
+GET {{Darkwolf.AuthService.Solution_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{Darkwolf.AuthService.Solution_HostAddress}}/api/auth/token
+Content-Type: application/json
+
+{
+  "username": "string",
+  "password": "string"
+}
+
+###
