@@ -7,14 +7,16 @@ public static class LogMessage
     public const string UserNotFoundOnLogin = "Login failed: user not found: {Username}";
     public const string InvalidPassword = "Login failed: invalid password for {EmpId}";
     public const string UserNotFoundOnReset = "Reset failed: user not found: {Email}";
-    public const string OtpNotGeneratedOrInvalid = "Reset failed: OTP not generated or invalid";
-    public const string OtpExpired = "Reset failed: OTP expired";
+    public const string ResetTokenNotGeneratedOrInvalid = "Reset failed: Reset token not generated or invalid";
+    public const string ResetTokenExpired = "Reset failed: Reset token expired";
+    public const string ResetTokenLog = "Generated Reset token {Token}";
 }
 
 public static class ExceptionMessage
 {
     public const string JwtNotConfigured = "JWT settings not configured";
     public const string ConnectionStringNotConfigured = "ConnectionString not configured";
+    public const string DarkwolfEmailNotConfigured = "Darkwolf email config not configured";
 }
 
 public static class ResponseMessage
@@ -26,10 +28,10 @@ public static class ResponseMessage
     public const string OtpSendToEmail = "Otp send to the email:{0}";
     public const string PasswordRequired = "Password is Required";
     public const string PasswordResetSuccess = "Password reset successfully";
-    public const string OtpForReset = "OTP for reset password : {0}";
-    public const string OtpRequired = "OTP is required";
+    public const string ResetTokenSent = "Token for reset password sent to {0}";
+    public const string ResetTokenRequired = "Reset token is required";
     public const string InvalidUser = "Invalid user";
-    public const string InvalidOtp = "Invalid OTP";
+    public const string InvalidResetToken = "Invalid reset token";
 }
 
 public static class FieldName
@@ -45,4 +47,11 @@ public static class AppSettingKey
     public const string DefaultConnection = "DefaultConnection";
     public const string JwtSettings = "JwtSettings";
     public const string PasswordSettings = "PasswordSettings";
+    public const string DarkwolfEmailConfig = "DarkwolfEmailConfig";
+}
+
+public static class EmailAddress
+{
+    public const string DisplayName = "Darkwolf Org";
+    public const string NoReplyDarkwolf = "noreply@darkwolf.com";
 }

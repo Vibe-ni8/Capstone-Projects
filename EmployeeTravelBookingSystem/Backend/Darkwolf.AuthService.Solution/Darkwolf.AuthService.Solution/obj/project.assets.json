@@ -24,20 +24,34 @@
           "lib/net8.0/Darkwolf.Shared.Common.dll": {}
         }
       },
-      "Darkwolf.Shared.Extensions/1.0.0": {
+      "Darkwolf.Shared.Extensions/1.1.0": {
         "type": "package",
         "dependencies": {
           "Darkwolf.Shared.Authentication": "1.0.0",
           "Darkwolf.Shared.Common": "1.0.0",
+          "Darkwolf.Shared.Infrastructure": "1.0.0",
           "Darkwolf.Shared.Logging": "1.0.0",
           "Darkwolf.Shared.Middleware": "1.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+          "Darkwolf.Shared.Persistence": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
         },
         "compile": {
           "lib/net8.0/Darkwolf.Shared.Extensions.dll": {}
         },
         "runtime": {
           "lib/net8.0/Darkwolf.Shared.Extensions.dll": {}
+        }
+      },
+      "Darkwolf.Shared.Infrastructure/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Darkwolf.Shared.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Darkwolf.Shared.Infrastructure.dll": {}
         }
       },
       "Darkwolf.Shared.Logging/1.0.0": {
@@ -64,6 +78,18 @@
         },
         "runtime": {
           "lib/net8.0/Darkwolf.Shared.Middleware.dll": {}
+        }
+      },
+      "Darkwolf.Shared.Persistence/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.21"
+        },
+        "compile": {
+          "lib/net8.0/Darkwolf.Shared.Persistence.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Darkwolf.Shared.Persistence.dll": {}
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -1196,7 +1222,7 @@
       ]
     },
     "Darkwolf.Shared.Common/1.0.0": {
-      "sha512": "z+W2GRm6ajX3LsxLB8Nt7Qhq0bYaMHWaskzYK1PG21pVr5hMkdSZgpKYql9iQ1m/XLskJRPpJYEIi/lLGiLnMw==",
+      "sha512": "3xQAwPCG/+nFY4LGEu3wbZ4vYFqoKK2kpiqAY8Os6G1wwi+G7spmVtvaM/+yKuC0994c4AMNdwqqJTf1M2VeUw==",
       "type": "package",
       "path": "darkwolf.shared.common/1.0.0",
       "files": [
@@ -1206,15 +1232,26 @@
         "lib/net8.0/Darkwolf.Shared.Common.dll"
       ]
     },
-    "Darkwolf.Shared.Extensions/1.0.0": {
-      "sha512": "EyolQw03FjeKTAV4o/SUBx6rpDtSKzCBdhJx7pEnglU+VUokkWKCBY3todewEKU/fwn75BgOLcgk+EfvKi3z7Q==",
+    "Darkwolf.Shared.Extensions/1.1.0": {
+      "sha512": "ZdNCA3VwgiaZY43mGfRrnrmGHK073X5CqJtOLEkcfVc9cPwqEd00OGUAsACL6ieGTHS4My5RF+jloV3CPfg96g==",
       "type": "package",
-      "path": "darkwolf.shared.extensions/1.0.0",
+      "path": "darkwolf.shared.extensions/1.1.0",
       "files": [
         ".nupkg.metadata",
-        "darkwolf.shared.extensions.1.0.0.nupkg.sha512",
+        "darkwolf.shared.extensions.1.1.0.nupkg.sha512",
         "darkwolf.shared.extensions.nuspec",
         "lib/net8.0/Darkwolf.Shared.Extensions.dll"
+      ]
+    },
+    "Darkwolf.Shared.Infrastructure/1.0.0": {
+      "sha512": "xUnJCwpgSDPxAegG2+7nHfjTFDTjJogkZbIowcBSyp6UiUKA/VfwqsoHfuZV/EHQ8rfOXbsaWQbrd8Rlw9R8vQ==",
+      "type": "package",
+      "path": "darkwolf.shared.infrastructure/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "darkwolf.shared.infrastructure.1.0.0.nupkg.sha512",
+        "darkwolf.shared.infrastructure.nuspec",
+        "lib/net8.0/Darkwolf.Shared.Infrastructure.dll"
       ]
     },
     "Darkwolf.Shared.Logging/1.0.0": {
@@ -1237,6 +1274,17 @@
         "darkwolf.shared.middleware.1.0.0.nupkg.sha512",
         "darkwolf.shared.middleware.nuspec",
         "lib/net8.0/Darkwolf.Shared.Middleware.dll"
+      ]
+    },
+    "Darkwolf.Shared.Persistence/1.0.0": {
+      "sha512": "1hqFWGgpnNJahOGucJsgii+paUI8WBmsTPDxqoDsBDOYFE/TCdTgKtDI5lgBSDEjshZohl6l0XTWAVTpwpLVWg==",
+      "type": "package",
+      "path": "darkwolf.shared.persistence/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "darkwolf.shared.persistence.1.0.0.nupkg.sha512",
+        "darkwolf.shared.persistence.nuspec",
+        "lib/net8.0/Darkwolf.Shared.Persistence.dll"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -3174,7 +3222,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Darkwolf.Shared.Extensions >= 1.0.0",
+      "Darkwolf.Shared.Extensions >= 1.1.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.21",
       "Pomelo.EntityFrameworkCore.MySql >= 8.0.3",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -3234,7 +3282,7 @@
         "dependencies": {
           "Darkwolf.Shared.Extensions": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.1.0, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

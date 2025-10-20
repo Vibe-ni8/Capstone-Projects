@@ -1,0 +1,12 @@
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\bin\Debug\net8.0\Darkwolf.Shared.Persistence.deps.json
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\bin\Debug\net8.0\Darkwolf.Shared.Persistence.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\bin\Debug\net8.0\Darkwolf.Shared.Persistence.pdb
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\Darkwolf.Shared.Persistence.csproj.AssemblyReference.cache
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\Darkwolf.Shared.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\Darkwolf.Shared.Persistence.AssemblyInfoInputs.cache
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\Darkwolf.Shared.Persistence.AssemblyInfo.cs
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\Darkwolf.Shared.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\Darkwolf.Shared.Persistence.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\refint\Darkwolf.Shared.Persistence.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\Darkwolf.Shared.Persistence.pdb
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Persistence\obj\Debug\net8.0\ref\Darkwolf.Shared.Persistence.dll

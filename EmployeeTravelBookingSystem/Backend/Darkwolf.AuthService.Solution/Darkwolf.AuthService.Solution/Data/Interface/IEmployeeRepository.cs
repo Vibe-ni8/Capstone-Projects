@@ -7,6 +7,6 @@ public interface IEmployeeRepository
     Task<Employee?> FindByEmpIdOrEmailAsync(string username);
     Task<Employee?> FindByEmailAsync(string email);
     Task<Role> FindRoleById(string id);
-    Task SetOtp(Employee employee, string otp, DateTime otpGeneratedDate);
+    Task SetResetToken(Employee employee, string resetToken, DateTime tokenGeneratedDate);
     Task ChangePassword(Employee employee, string newPassword);
 }

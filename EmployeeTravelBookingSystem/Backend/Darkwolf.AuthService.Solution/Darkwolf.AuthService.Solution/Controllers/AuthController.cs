@@ -47,13 +47,13 @@ public class AuthController : Controller
         if (string.IsNullOrWhiteSpace(request.Email))
             return BadRequest(new { Message = ResponseMessage.EmailRequired });
 
-        var otp = await _passwordService.Forgot(request);
-        if (otp == null)
+        var resetToken = await _passwordService.Forgot(request);
+        if (resetToken == null)
             return Unauthorized(new { Message = ResponseMessage.EmailNotRegistered });
 
         _logger.LogInfo(LogMessage.EndMethod, nameof(ForgotPassword));
 
-        return Ok(new { Message = string.Format(ResponseMessage.OtpForReset, otp) });
+        return Ok(new { Message = string.Format(ResponseMessage.ResetTokenSent, request.Email) });
     }
 
     [HttpPost("password/reset")]
@@ -63,7 +63,7 @@ public class AuthController : Controller
 
         var msg = string.IsNullOrWhiteSpace(request.Email) ? ResponseMessage.EmailRequired
             : string.IsNullOrWhiteSpace(request.Password) ? ResponseMessage.PasswordRequired 
-            : string.IsNullOrEmpty(request.Otp) ? ResponseMessage.OtpRequired : null;
+            : string.IsNullOrEmpty(request.ResetToken) ? ResponseMessage.ResetTokenRequired : null;
 
         msg ??= await _passwordService.Reset(request);
 

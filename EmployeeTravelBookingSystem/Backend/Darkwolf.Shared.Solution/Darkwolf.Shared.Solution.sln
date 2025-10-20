@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkwolf.Shared.Authentication", "Darkwolf.Shared.Authentication\Darkwolf.Shared.Authentication.csproj", "{250C7C18-CC1A-4402-BFB4-11A9004462D7}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkwolf.Shared.Common", "Darkwolf.Shared.Common\Darkwolf.Shared.Common.csproj", "{A5F5A054-4C5C-4278-AEB5-EC187F736B71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkwolf.Shared.Middleware", "Darkwolf.Shared.Middleware\Darkwolf.Shared.Middleware.csproj", "{33D93090-49E6-4C08-9484-B5CC02AF5BE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkwolf.Shared.Persistence", "Darkwolf.Shared.Persistence\Darkwolf.Shared.Persistence.csproj", "{E0A85B6A-CD91-48D1-A9E6-E2BE9CC3368C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darkwolf.Shared.Infrastructure", "Darkwolf.Shared.Infrastructure\Darkwolf.Shared.Infrastructure.csproj", "{AB36F179-B7B2-4DB1-B2F7-D2F09FF8A3F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{33D93090-49E6-4C08-9484-B5CC02AF5BE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33D93090-49E6-4C08-9484-B5CC02AF5BE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33D93090-49E6-4C08-9484-B5CC02AF5BE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A85B6A-CD91-48D1-A9E6-E2BE9CC3368C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A85B6A-CD91-48D1-A9E6-E2BE9CC3368C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A85B6A-CD91-48D1-A9E6-E2BE9CC3368C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A85B6A-CD91-48D1-A9E6-E2BE9CC3368C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB36F179-B7B2-4DB1-B2F7-D2F09FF8A3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB36F179-B7B2-4DB1-B2F7-D2F09FF8A3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB36F179-B7B2-4DB1-B2F7-D2F09FF8A3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB36F179-B7B2-4DB1-B2F7-D2F09FF8A3F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

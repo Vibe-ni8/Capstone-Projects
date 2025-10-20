@@ -54,7 +54,7 @@
           "dependencies": {
             "Darkwolf.Shared.Extensions": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[1.1.0, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

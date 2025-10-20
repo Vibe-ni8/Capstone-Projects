@@ -35,18 +35,18 @@ public class EmployeeRepository : IEmployeeRepository
             .FirstAsync();
     }
 
-    public async Task SetOtp(Employee employee, string otp, DateTime otpGeneratedDate)
+    public async Task SetResetToken(Employee employee, string resetToken, DateTime tokenGeneratedDate)
     {
-        employee.Otp = otp;
-        employee.OtpGeneratedDate = otpGeneratedDate;
+        employee.ResetToken = resetToken;
+        employee.TokenGeneratedDate = tokenGeneratedDate;
         _db.Employees.Update(employee);
         await _db.SaveChangesAsync();
     }
 
     public async Task ChangePassword(Employee employee, string newPassword)
     {
-        employee.Otp = null;
-        employee.OtpGeneratedDate = null;
+        employee.ResetToken = null;
+        employee.TokenGeneratedDate = null;
         employee.EmpPassword = new PasswordHasher<Employee>().HashPassword(employee, newPassword);
         _db.Employees.Update(employee);
         await _db.SaveChangesAsync();

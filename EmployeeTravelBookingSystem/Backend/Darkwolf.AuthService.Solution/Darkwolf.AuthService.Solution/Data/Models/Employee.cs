@@ -28,9 +28,9 @@ public class Employee : BaseEntity
     [Column("dept_id")]
     public string DeptId { get; set; } = null!;
 
-    [Column("otp")]
-    public string? Otp { get; set; } = null;
+    [Column("reset_token")]
+    public string? ResetToken { get; set; } = null;
 
-    [Column("otp_generated_date")]
-    public DateTime? OtpGeneratedDate { get; set; } = null;
+    [Column("token_generated_date")]
+    public DateTime? TokenGeneratedDate { get; set; } = null;
 }

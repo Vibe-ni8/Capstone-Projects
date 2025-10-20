@@ -36,10 +36,10 @@ public class AuthDbContext : DbContext
             b.Property(e => e.DeptId).HasColumnName("dept_id")
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
-            b.Property(e => e.Otp).HasColumnName("otp")
+            b.Property(e => e.ResetToken).HasColumnName("reset_token")
             .HasColumnType("Varchar(10)").HasMaxLength(10);
 
-            b.Property(e => e.OtpGeneratedDate).HasColumnName("otp_generated_date")
+            b.Property(e => e.TokenGeneratedDate).HasColumnName("token_generated_date")
             .HasColumnType("datetime");
         });
 

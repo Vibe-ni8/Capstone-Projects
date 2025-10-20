@@ -136,7 +136,7 @@
             "type": "string",
             "nullable": true
           },
-          "otp": {
+          "resetToken": {
             "type": "string",
             "nullable": true
           }

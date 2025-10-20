@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40103C02-FFA7-491E-BA8F-1C7A73B38301}|Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj|c:\\users\\vigne\\onedrive\\desktop\\virtusa-capstone_projects\\employeetravelbookingsystem\\backend\\darkwolf.authservice.solution\\darkwolf.authservice.solution\\darkwolf.authservice.solution.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{40103C02-FFA7-491E-BA8F-1C7A73B38301}|Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj|solutionrelative:darkwolf.authservice.solution\\darkwolf.authservice.solution.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{40103C02-FFA7-491E-BA8F-1C7A73B38301}|Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj|c:\\users\\vigne\\onedrive\\desktop\\virtusa-capstone_projects\\employeetravelbookingsystem\\backend\\darkwolf.authservice.solution\\darkwolf.authservice.solution\\service\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40103C02-FFA7-491E-BA8F-1C7A73B38301}|Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj|solutionrelative:darkwolf.authservice.solution\\service\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40103C02-FFA7-491E-BA8F-1C7A73B38301}|Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj|c:\\users\\vigne\\onedrive\\desktop\\virtusa-capstone_projects\\employeetravelbookingsystem\\backend\\darkwolf.authservice.solution\\darkwolf.authservice.solution\\utils\\common\\commonconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40103C02-FFA7-491E-BA8F-1C7A73B38301}|Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj|solutionrelative:darkwolf.authservice.solution\\utils\\common\\commonconstants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40103C02-FFA7-491E-BA8F-1C7A73B38301}|Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj|c:\\users\\vigne\\onedrive\\desktop\\virtusa-capstone_projects\\employeetravelbookingsystem\\backend\\darkwolf.authservice.solution\\darkwolf.authservice.solution\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,30 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Darkwolf.AuthService.Solution.http",
-              "DocumentMoniker": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.http",
-              "RelativeDocumentMoniker": "Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.http",
-              "ToolTip": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.http",
-              "RelativeToolTip": "Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-10-19T18:58:14.669Z",
+              "DocumentIndex": 1,
+              "Title": "CommonConstants.cs",
+              "DocumentMoniker": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Utils\\Common\\CommonConstants.cs",
+              "RelativeDocumentMoniker": "Darkwolf.AuthService.Solution\\Utils\\Common\\CommonConstants.cs",
+              "ToolTip": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Utils\\Common\\CommonConstants.cs",
+              "RelativeToolTip": "Darkwolf.AuthService.Solution\\Utils\\Common\\CommonConstants.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAqwDYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T20:25:57.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "PasswordService.cs",
+              "DocumentMoniker": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Service\\PasswordService.cs",
+              "RelativeDocumentMoniker": "Darkwolf.AuthService.Solution\\Service\\PasswordService.cs",
+              "ToolTip": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Service\\PasswordService.cs",
+              "RelativeToolTip": "Darkwolf.AuthService.Solution\\Service\\PasswordService.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDcAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T19:08:35.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Darkwolf.AuthService.Solution\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Darkwolf.AuthService.Solution\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAADwv0UAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T13:38:29.557Z",
               "EditorCaption": ""

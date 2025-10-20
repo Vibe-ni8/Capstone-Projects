@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ArFnfu678E4=",
+  "dgSpecHash": "Z38mMc4tRRI=",
   "success": true,
   "projectFilePath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.authentication\\1.0.0\\darkwolf.shared.authentication.1.0.0.nupkg.sha512",
     "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.common\\1.0.0\\darkwolf.shared.common.1.0.0.nupkg.sha512",
-    "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.extensions\\1.0.0\\darkwolf.shared.extensions.1.0.0.nupkg.sha512",
+    "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.extensions\\1.1.0\\darkwolf.shared.extensions.1.1.0.nupkg.sha512",
+    "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.infrastructure\\1.0.0\\darkwolf.shared.infrastructure.1.0.0.nupkg.sha512",
     "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.logging\\1.0.0\\darkwolf.shared.logging.1.0.0.nupkg.sha512",
     "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.middleware\\1.0.0\\darkwolf.shared.middleware.1.0.0.nupkg.sha512",
+    "C:\\Users\\vigne\\.nuget\\packages\\darkwolf.shared.persistence\\1.0.0\\darkwolf.shared.persistence.1.0.0.nupkg.sha512",
     "C:\\Users\\vigne\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\vigne\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\vigne\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",

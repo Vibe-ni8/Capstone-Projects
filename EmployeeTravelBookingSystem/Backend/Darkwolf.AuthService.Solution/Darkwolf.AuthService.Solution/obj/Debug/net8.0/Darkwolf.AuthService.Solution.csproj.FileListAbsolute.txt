@@ -121,3 +121,5 @@ C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingS
 C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.AuthService.Solution\Darkwolf.AuthService.Solution\obj\Debug\net8.0\Darkwolf.AuthService.Solution.pdb
 C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.AuthService.Solution\Darkwolf.AuthService.Solution\obj\Debug\net8.0\Darkwolf.AuthService.Solution.genruntimeconfig.cache
 C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.AuthService.Solution\Darkwolf.AuthService.Solution\obj\Debug\net8.0\ref\Darkwolf.AuthService.Solution.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.AuthService.Solution\Darkwolf.AuthService.Solution\bin\Debug\net8.0\Darkwolf.Shared.Persistence.dll
+C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.AuthService.Solution\Darkwolf.AuthService.Solution\bin\Debug\net8.0\Darkwolf.Shared.Infrastructure.dll
