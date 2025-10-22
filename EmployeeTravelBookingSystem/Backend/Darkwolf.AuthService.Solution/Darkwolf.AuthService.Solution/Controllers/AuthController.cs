@@ -2,6 +2,7 @@
 using Darkwolf.AuthService.Solution.Service;
 using Darkwolf.AuthService.Solution.Utils.Common;
 using Darkwolf.Shared.Logging.Interface;
+using Darkwolf.Shared.Middleware.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Darkwolf.AuthService.Solution.Controllers;
@@ -23,6 +24,10 @@ public class AuthController : Controller
     }
 
     [HttpPost("token")]
+    [ProducesResponseType<object>(200)]
+    [ProducesResponseType<object>(400)]
+    [ProducesResponseType<object>(401)]
+    [ProducesResponseType<ErrorResponse>(500)]
     public async Task<IActionResult> Token([FromBody] LoginRequest request)
     {
         _logger.LogInfo(LogMessage.StartMethod, nameof(Token));
@@ -40,6 +45,10 @@ public class AuthController : Controller
     }
 
     [HttpPost("password/forgot")]
+    [ProducesResponseType<object>(200)]
+    [ProducesResponseType<object>(400)]
+    [ProducesResponseType<object>(401)]
+    [ProducesResponseType<ErrorResponse>(500)]
     public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request)
     {
         _logger.LogInfo(LogMessage.StartMethod, nameof(ForgotPassword));
@@ -57,6 +66,10 @@ public class AuthController : Controller
     }
 
     [HttpPost("password/reset")]
+    [ProducesResponseType<object>(200)]
+    [ProducesResponseType<object>(400)]
+    [ProducesResponseType<object>(401)]
+    [ProducesResponseType<ErrorResponse>(500)]
     public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequest request)
     {
         _logger.LogInfo(LogMessage.StartMethod, nameof(ResetPassword));

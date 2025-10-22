@@ -1,0 +1,62 @@
+<!-- Area 1 start -->
+<div class="dflex">
+    <img src="assets/logos/wolf-tattoo-7.jpg" class="logo" [ngClass]="{ 'slide-fade':!wolfLookInside, 'slide-fade-Mirrored':wolfLookInside }" alt="side wolf image"/>
+    <div class="content-center">
+        <h5>Welcome to the</h5>
+        <h1>Darkwolf</h1>
+        <button class="button-image" (click)="changeWolfPosition()">
+            <img src="assets/logos/wolf-tattoo-8.jpg" class="logo-small fade" alt="wolf image"/>
+        </button>
+    </div>
+    <img src="assets/logos/wolf-tattoo-7.jpg" class="logo" [ngClass]="{ 'slide-fade':wolfLookInside, 'slide-fade-Mirrored':!wolfLookInside }" alt="Mirrored side wolf image">
+</div>
+<!-- Area 1 end -->
+<br/>
+<!-- Area 2 start -->
+<section class="darkwolf-disclaimer">
+  <h2>Disclaimer</h2>
+  <p>
+    Darkwolf is a secure portal intended for authorized users only. By accessing this site, you agree to abide by all applicable laws and internal policies. Unauthorized access or misuse may result in disciplinary action or legal consequences.
+  </p>
+  <p>
+    All activity is monitored and logged for security purposes. If you are not an authorized user, please exit immediately.
+  </p>
+</section>
+<!-- Area 2 end -->
+<br>
+<!-- Area 3 start -->
+<router-outlet></router-outlet>
+<!-- Area 3 end -->
+<br/>
+<!-- Area 4 start -->
+<footer class="darkwolf-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: support@darkwolf.com</p>
+      <p>Phone: +91 89407 73113</p>
+      <p>Location: Chennai, India</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="home/login">Login</a></li>
+        <li><a href="home/forgot-password">Forgot Password</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>About Darkwolf</h3>
+      <p>Darkwolf is a secure portal built for strength, secrecy, and speed. Join the pack.</p>
+      <p><img src="assets/logos/wolf-tattoo-0.jpg" class="mini-img"/>Darkwolf Security System</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Darkwolf. All rights reserved.</p>
+  </div>
+</footer>
+<!-- Area 4 end -->

@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+.dflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dflex-start {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.dflex-align-start {
+    align-items: start;
+}
+
+.gap {
+    margin-bottom: 10px;
+}
+.gap-20 {
+    margin-bottom: 20px;
+}
+.gap-30 {
+    margin-bottom: 30px;
+}
+
+.msg-success {
+    color: green;
+}
+.msg-error {
+    color: red;
+}
