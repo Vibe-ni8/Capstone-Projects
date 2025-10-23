@@ -63,7 +63,7 @@
 }
 
 .fade {
-    animation: fade 5s ease-in-out forwards;
+    animation: fade 5s ease-in-out forwards, pulse 2s ease-in-out infinite;
 }
 
 @keyframes fade {
@@ -73,6 +73,12 @@
     100% {
       opacity: 1;
     }
+}
+
+@keyframes pulse {
+  0% { filter: drop-shadow(0 0 5px #00bfff); }
+  50% { filter: drop-shadow(0 0 15px #00bfff); }
+  100% { filter: drop-shadow(0 0 5px #00bfff); }
 }
 
 .darkwolf-disclaimer {

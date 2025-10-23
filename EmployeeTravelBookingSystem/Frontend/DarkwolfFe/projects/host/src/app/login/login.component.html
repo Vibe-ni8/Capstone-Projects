@@ -16,8 +16,8 @@
 
         <div>
             <!-- Final message -->
-            <div class="dflex login-head">
-                <span class="gap" [ngClass]="{ 'msg-success': isProcessSuccess, 'msg-error':!isProcessSuccess }">{{overallMessage}}</span>
+            <div class="dflex login-error-head">
+                <span class="gap msg-error">{{overallMessage}}</span>
             </div>
 
             <ng-container [ngSwitch]="processName">
@@ -37,15 +37,18 @@
                 <div class="dflex dflex-align-start gap">
                     <span>Password :</span>
                     <div>
-                        <input #password="ngModel" ngModel required name="password" type="password" class="login-input"/><br>
+                        <input #password="ngModel" ngModel required name="password" [type]="showPassword.value ? 'text' : 'password'" class="login-input"/><br>
                         <ng-container *ngIf="password.invalid && password.touched">
                             <span *ngIf="password.errors?.['required']" class="login-validation dflex-start">Password is required.</span>
                         </ng-container>
+                        <label class="show-password-toggle">
+                            <input #showPassword="ngModel" ngModel name="showPassword" type="checkbox" />Show Password
+                        </label>
                     </div>
                 </div>
                 <!-- Actions -->
                 <div class="dflex dflex-align-start">
-                    <button (click)="setProcess = 'forgot'" class="button-action">Forgot Password</button>
+                    <button (click)="partialReset(); setProcess = 'forgot';" class="button-action">Forgot Password</button>
                     <button [disabled]="loginForm.invalid" type="submit" class="button-action">Login</button>
                 </div>
             </form>
@@ -63,12 +66,16 @@
                 </div>
                 <!-- Actions -->
                 <div class="dflex dflex-align-start">
-                    <button (click)="setProcess = 'login'" class="button-action">Back</button>
+                    <button (click)="partialReset(); setProcess = 'login';" class="button-action">Back</button>
                     <button [disabled]="forgotForm.invalid" type="submit" class="button-action">Confirm</button>
                 </div>
             </form>
             <!-- Reset Password box -->
             <form *ngSwitchCase="'Reset Password'" #resetForm="ngForm" (ngSubmit)="changePassword(resetForm)" class="login login-reset gap">
+                
+                <div class="dflex">
+                    <span class="note-reset-token">*note: Reset token is sent to your email, if you triggered forgot-password</span>
+                </div>
                 <!-- reset token -->
                 <div class="dflex dflex-align-start gap">
                     <span>Reset Token _____:</span>
@@ -83,7 +90,7 @@
                 <div class="dflex dflex-align-start gap">
                     <span>New Password ___:</span>
                     <div>
-                        <input #newPasswordModel="ngModel" [(ngModel)]="password" required minlength="8" name="newPassword" [type]="showPassword.value ? 'text' : 'password'" class="login-input"/><br>
+                        <input #newPasswordModel="ngModel" [(ngModel)]="password" required minlength="8" name="newPassword" [type]="showPasswordReset.value ? 'text' : 'password'" class="login-input"/><br>
                         <ng-container *ngIf="newPasswordModel.invalid && newPasswordModel.touched">
                             <span *ngIf="newPasswordModel.errors?.['required']" class="login-validation dflex-start">Password is required.</span>
                             <span *ngIf="newPasswordModel.errors?.['minlength']" class="login-validation dflex-start">Password atleast have 8 character length.</span>
@@ -94,19 +101,19 @@
                 <div class="dflex dflex-align-start gap">
                     <span>Confirm Password :</span>
                     <div>
-                        <input #confirmPasswordModel="ngModel" [(ngModel)]="confirmPassword" required name="confirmPassword" [type]="showPassword.value ? 'text' : 'password'" class="login-input"/><br>
+                        <input #confirmPasswordModel="ngModel" [(ngModel)]="confirmPassword" required name="confirmPassword" [type]="showPasswordReset.value ? 'text' : 'password'" class="login-input"/><br>
                         <ng-container *ngIf="(confirmPasswordModel.invalid || confirmPassword != password) && confirmPasswordModel.touched">
                             <span *ngIf="confirmPasswordModel.errors?.['required']" class="login-validation dflex-start">Confirm Password is required.</span>
                             <span *ngIf="confirmPassword != password" class="login-validation dflex-start">Password and Confirm password both should match.</span>
                         </ng-container>
                         <label class="show-password-toggle">
-                            <input #showPassword="ngModel" ngModel name="showPassword" type="checkbox" />Show Password
+                            <input #showPasswordReset="ngModel" ngModel name="showPassword" type="checkbox" />Show Password
                         </label><br>
                     </div>
                 </div>
                 <!-- Actions -->
                 <div class="dflex dflex-align-start">
-                    <button (click)="setProcess = 'login'" class="button-action">Back</button>
+                    <button (click)="partialReset(); setProcess = 'login';" class="button-action">Back to login</button>
                     <button [disabled]="resetForm.invalid || confirmPassword != password" type="submit" class="button-action">
                         Change Password
                     </button>
@@ -120,4 +127,5 @@
     <!-- Section 2 end -->
 
 </div>
+<app-loader *ngIf="isLoading"></app-loader>
 <!-- Area 2 end -->

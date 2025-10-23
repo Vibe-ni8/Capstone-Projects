@@ -15,9 +15,14 @@ export class LoginComponent implements AfterViewInit {
   // life cycles
   ngOnInit() {
     this.setProcess = this.route.snapshot.data['section'];
+    this.overallMessage = '';
   }
   
   ngAfterViewInit() {
+    this.scrollTo();
+  }
+
+  scrollTo() {
     const el = document.getElementById('login-target');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -43,36 +48,115 @@ export class LoginComponent implements AfterViewInit {
   // Section 1 end
 
   // Section 2 start
-  isProcessSuccess : boolean = false;
+  isLoading : boolean = false;
   overallMessage : string = ''; 
   email : string = '';
   password : string = '';
   confirmPassword : string = '';
 
+  partialReset() {
+    this.overallMessage = '';
+    this.email = '';
+    this.password = '';
+    this.confirmPassword = '';
+  }
+
   login(loginForm : NgForm) {
+    this.isLoading = true;
+    this.scrollTo();
     this.authService.login(loginForm.value).subscribe({
       next: res => {
-        this.isProcessSuccess = res; 
-        this.overallMessage = res ? 'Login success' : 'Invalid Credentials';
+        if (res) {
+          // this.isLoading = false;
+          // this.partialReset(); // remove
+          // this.processName = Process.Forgot; // remove redirect
+          setTimeout(() => {
+            this.isLoading = false;
+            this.partialReset(); // remove
+            this.processName = Process.Forgot; // remove redirect
+          }, 3500);
+        }
+        else {
+          // this.isLoading = false;
+          // this.overallMessage = 'Invalid Credentials';
+          setTimeout(() => {
+            this.isLoading = false;
+            this.overallMessage = 'Invalid Credentials';
+          }, 3500);
+        }
       },
-      error: err => {
-        this.isProcessSuccess = false;
+      error: () => {
+        this.isLoading = false;
         this.overallMessage = 'Internal Server Error';
       }
     });
   }
 
   confirmSubmit(forgotForm : NgForm) {
+    this.isLoading = true;
+    this.scrollTo();
     this.email = forgotForm.value.email;
-    this.processName = Process.Reset;
+    this.authService.forgotPassword({email: this.email}).subscribe({
+      next: res => {
+        if (res) {
+          // this.isLoading = false;
+          // this.overallMessage = '';
+          // this.processName = Process.Reset;
+          setTimeout(() => {
+            this.isLoading = false;
+            this.overallMessage = '';
+            this.processName = Process.Reset;
+          }, 3500);
+        }
+        else {
+          // this.isLoading = false;
+          // this.overallMessage = 'Email not registered';
+          setTimeout(() => {
+            this.isLoading = false;
+            this.overallMessage = 'Email not registered';
+          }, 3500);
+        }
+      },
+      error: () => {
+        this.isLoading = false;
+        this.overallMessage = 'Internal Server Error';
+      }
+    });
   }
 
   changePassword(resetForm : NgForm) {
-    let value = resetForm.value;
-    console.log({
+    this.isLoading = true;
+    this.scrollTo();
+    let request = {
       email: this.email,
       password: this.password,
-      resetToken: value.resetToken
+      resetToken: resetForm.value.resetToken
+    };
+    this.authService.resetPassword(request).subscribe({
+      next: res => {
+        if (res) {
+          // this.isLoading = false;
+          // this.partialReset();
+          // this.processName = Process.Login;
+          setTimeout(() => {
+            this.isLoading = false;
+            this.partialReset();
+            this.processName = Process.Login;
+          }, 3500);
+        }
+        else {
+          // this.isLoading = false;
+          // this.overallMessage = 'Reset Password Failed';
+          setTimeout(() => {
+            this.isLoading = false;
+            this.overallMessage = 'Reset Password Failed';
+          }, 3500);
+        }
+      },
+      error: () => {
+        this.isLoading = false;
+        this.overallMessage = 'Internal Server Error';
+      }
     });
   }
   // Section 2 end
