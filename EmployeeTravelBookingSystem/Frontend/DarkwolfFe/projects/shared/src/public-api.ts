@@ -11,4 +11,5 @@ export * from './lib/components/page-not-found/page-not-found.component';
 
 // services
 export * from './lib/services/token.service';
+export * from './lib/services/theme.service';
 export * from './lib/services/loader.service';

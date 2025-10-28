@@ -1,9 +1,13 @@
 .dashboard {
-  background-color: #0f0f0f;
-  color: #fff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', sans-serif;
   border-radius: 5px;
+}
+
+.dashboard-content {
+  height: 100vh;
 }

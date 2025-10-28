@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
+
+  constructor(private router:Router) {}
 
   modules = [
     { title: 'Travel Booking', description: 'Manage and view travel bookings', icon: 'fa fa-plane' },
@@ -17,6 +20,10 @@ export class DetailsComponent {
 
   navigate(item: any) {
     console.log('Navigating to:', item.title);
+    switch (item.title)
+    {
+      case 'Settings': this.router.navigate(['/dashboard/settings']); break;
+    }
   }
   
 }

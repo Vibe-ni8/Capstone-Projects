@@ -1,8 +1,8 @@
 .body {
       margin: 0;
       padding: 0;
-      background-color: #000;
-      color: #fff;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       font-family: 'Georgia', serif;
       display: flex;
       flex-direction: column;
@@ -40,9 +40,9 @@
     }
 
     @keyframes pulse {
-      0% { filter: drop-shadow(0 0 5px #00bfff); }
-      50% { filter: drop-shadow(0 0 15px #00bfff); }
-      100% { filter: drop-shadow(0 0 5px #00bfff); }
+      0% { filter: drop-shadow(0 0 5px var(--pulse-color)); }
+      50% { filter: drop-shadow(0 0 15px var(--pulse-color)); }
+      100% { filter: drop-shadow(0 0 5px var(--pulse-color)); }
     }
 
     h1 {
@@ -63,8 +63,8 @@
     .disclaimer {
       margin-top: 40px;
       padding: 20px;
-      background-color: #111;
-      border-top: 1px solid #333;
+      background-color: var(--bg-color-secondary);
+      border-top: 1px solid var(--border-color);
       max-width: 600px;
     }
 
@@ -75,5 +75,5 @@
 
     .disclaimer p {
       font-size: 14px;
-      color: #ccc;
+      color: var(--text-color-secondary);
     }

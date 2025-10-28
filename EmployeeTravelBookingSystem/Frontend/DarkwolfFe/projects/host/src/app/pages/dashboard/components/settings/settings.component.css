@@ -1,0 +1,41 @@
+.settings-container {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px var(--shadow-color);
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.theme-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-color-secondary);
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+label:hover {
+  background: var(--hover-bg-color);
+}
+
+input[type="radio"] {
+  accent-color: var(--text-color);
+}

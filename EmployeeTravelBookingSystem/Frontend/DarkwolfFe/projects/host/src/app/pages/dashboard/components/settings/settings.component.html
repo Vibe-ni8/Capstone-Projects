@@ -1,0 +1,38 @@
+<div class="settings-container">
+    <h2>Appearance</h2>
+
+    <div class="theme-options">
+        <label>
+            <input
+                type="radio"
+                name="theme"
+                value="system"
+                [checked]="currentTheme === 'system'"
+                (change)="changeTheme('system')"
+            />
+            <span>🖥️ System Default</span>
+        </label>
+
+        <label>
+            <input
+              type="radio"
+              name="theme"
+              value="light"
+              [checked]="currentTheme === 'light'"
+              (change)="changeTheme('light')"
+            />
+            <span>☀️ Light Theme</span>
+        </label>
+
+        <label>
+            <input
+              type="radio"
+              name="theme"
+              value="dark"
+              [checked]="currentTheme === 'dark'"
+              (change)="changeTheme('dark')"
+            />
+            <span>🌙 Dark Theme</span>
+        </label>
+    </div>
+</div>

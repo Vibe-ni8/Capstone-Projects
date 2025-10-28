@@ -11,7 +11,7 @@
       <div class="profile-menu" *ngIf="isProfileMenuOpen">
         <ul>
           <li (click)="openProfilePlate()">My Profile</li>
-          <li routerLink="/dashboard/settings">Settings</li>
+          <li (click)="openSettingPlate()">Settings</li>
           <li (click)="logout()">Logout</li>
         </ul>
       </div>
@@ -29,11 +29,14 @@
 </nav>
 
 <!-- Profile Overlay -->
-<div class="profile-plate" *ngIf="isProfilePlateOpen" (click)="onOverlayClick($event)">
-  <button class="close-button" (click)="closeProfilePlate()">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-  <div class="profile-plate-content">
-    <app-profile></app-profile>
+<div class="background-hider" *ngIf="isProfilePlateOpen || isSettingPlateOpen">
+  <div class="plate">
+    <button class="close-button" (click)="closePlate()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="plate-content">
+      <app-profile *ngIf="isProfilePlateOpen"></app-profile>
+      <app-settings *ngIf="isSettingPlateOpen"></app-settings>
+    </div>
   </div>
 </div>

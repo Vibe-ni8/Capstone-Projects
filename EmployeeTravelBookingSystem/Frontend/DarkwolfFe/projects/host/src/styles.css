@@ -27,8 +27,86 @@
 }
 
 .msg-success {
-    color: green;
+    color: var(--msg-success);
 }
 .msg-error {
-    color: red;
+    color: var(--msg-error);
+}
+
+/* ======== 🌙 Default (Dark Theme) ======== */
+:root {
+  --bg-color: #000;
+  --bg-color-secondary: #111;
+  --card-bg: #1a1a1a;
+  --hover-bg-color: #222;
+  --hover-bg-color-secondary: #444;
+
+  --button-bg-color: #333;
+  --hover-button-bg-color: gray;
+
+  --text-color: #fff;
+  --text-color-secondary: #ccc;
+  --text-color-aaa: #aaa;
+  --text-color-777: #777;
+  --text-color-diasbled: rgb(97, 97, 97);
+
+  --border-color: #333;
+  --border-color-secondary: #444;
+  --border-color-ccc: #ccc;
+  --border-color-000:#000;
+
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --box-shadow-color: rgba(255, 255, 255, 0.05);
+  --box-shadow-color-secondary: rgb(77, 74, 74);
+  
+  --msg-error: red;
+  --msg-success: green;
+  --pulse-color: #00bfff;
+  --loader-bg-color: rgba(255, 255, 255, 0.25);
+  --show-password-toggle: #555;
+  --line-up-down: #555;
+}
+
+/* ======== 🌞 Light Theme ======== */
+:root[data-theme='light'] {
+  --bg-color: #f5f5f5;
+  --bg-color-secondary: #ffffff;
+  --card-bg: #ffffff;
+  --hover-bg-color: #e6e6e6;
+  --hover-bg-color-secondary: #f0f0f0;
+
+  --button-bg-color: #dcdcdc;
+
+  --text-color: #111111;
+  --text-color-secondary: #333333;
+  --text-color-aaa: #555555;
+  --text-color-diasbled: #999999;
+
+  --border-color: #dddddd;
+  --border-color-secondary: #cccccc;
+  --border-color-ccc: #ccc;
+  --border-color-000: #000;
+
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --box-shadow-color: rgba(0, 0, 0, 0.05);
+  --box-shadow-color-secondary: rgba(0, 0, 0, 0.15);
+
+  --msg-error: #d32f2f;
+  --msg-success: #2e7d32;
+  --pulse-color: #0077cc;
+  --loader-bg-color: rgba(0, 0, 0, 0.25);
+  --show-password-toggle: #888;
+  --line-up-down: #ccc;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
 }

@@ -14,31 +14,40 @@ export class NavComponent {
   isSidebarOpen = false;
   isProfileMenuOpen = false;
   isProfilePlateOpen = false;
+  isSettingPlateOpen = false;
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
-  }
-
-  closeSidebarIfOpen() {
-    if (this.isSidebarOpen)
-      this.isSidebarOpen = false;
   }
 
   toggleProfileMenu() {
     this.isProfileMenuOpen = !this.isProfileMenuOpen;
   }
 
+  closeMenusIfOpen() {
+    this.closeSidebarIfOpen();
+    this.closeProfileMenuIfOpen();
+  }
+  private closeSidebarIfOpen() {
+    if (this.isSidebarOpen)
+      this.isSidebarOpen = false;
+  }
+  private closeProfileMenuIfOpen() {
+    if (this.isProfileMenuOpen)
+      this.isProfileMenuOpen = false;
+  }
+
   openProfilePlate() {
     this.isProfilePlateOpen = true;
   }
 
-  closeProfilePlate() {
-    this.isProfilePlateOpen = false;
+  openSettingPlate() {
+    this.isSettingPlateOpen = true;
   }
 
-  onOverlayClick(event: MouseEvent) {
-    // Prevent click inside panel from closing it
-    event.stopPropagation();
+  closePlate() {
+    this.isProfilePlateOpen = false;
+    this.isSettingPlateOpen = false;
   }
 
   logout() {

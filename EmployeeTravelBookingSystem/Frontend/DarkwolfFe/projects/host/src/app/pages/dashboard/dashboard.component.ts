@@ -10,8 +10,8 @@ export class DashboardComponent {
 
   @ViewChild(NavComponent) navComponent!: NavComponent;
 
-  closeSidebar() {
-    this.navComponent.closeSidebarIfOpen();
+  closeMenus() {
+    this.navComponent.closeMenusIfOpen();
   }
 
 }

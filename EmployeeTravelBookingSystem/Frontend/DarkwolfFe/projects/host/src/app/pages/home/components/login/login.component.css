@@ -3,17 +3,17 @@
   margin: 100px auto;
   margin-top: 0;
   margin-bottom: 0;
-  background-color: #1a1a1a;
-  color: #ccc;
-  border: 1px solid #333;
+  background-color: var(--card-bg);
+  color: var(--text-color-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px var(--box-shadow-color);
   font-family: 'Segoe UI', sans-serif;
 }
 
 .darkwolf-disclaimer-head {
     padding: 20px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid var(--border-color-secondary);
 }
 
 .darkwolf-disclaimer-body {
@@ -24,7 +24,7 @@
 
 .login {
     border: 1px;
-    border-color: #ccc;
+    border-color: var(--border-color-ccc);
     border-style: solid;
     width: 20rem;
     border-radius: 5px;
@@ -36,13 +36,13 @@
 }
 
 .login-head {
-    color: #f5f5f5;
+    color: var(--text-color);
     font-size: 24px;
     margin: auto;
 }
 
 .login-error-head {
-    color: #f5f5f5;
+    color: var(--text-color);
     font-size: 24px;
     margin: auto;
     width: 20rem;
@@ -53,8 +53,8 @@
 
 .login-input {
     background-color: transparent;
-    color: #ccc;
-    border-color: black;
+    color: var(--text-color-secondary);
+    border-color: var(--border-color-000);
     border-radius: 5px;
     border-top: none;
     border-left: none;
@@ -69,22 +69,23 @@
 .login-validation {
     width: 30ch;
     text-wrap: initial;
-    color: red;
+    color: var(--msg-error);
     font-size: smaller;
     padding-left: 10px;
 }
 
 .button-action {
     border-radius: 8px;
-    color: #ccc;
+    color: var(--text-color-secondary);
     background-color: transparent;
+    border-color: var(--border-color-000);
     margin-left: 3px;
 }
 .button-action:hover {
-    color: white;
+    color: var(--text-color);
 }
 .button-action:disabled {
-    color: rgb(97, 97, 97);
+    color: var(--text-color-diasbled);
     background-color: transparent;
 }
 
@@ -94,7 +95,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #555;
+  color: var(--show-password-toggle);
 }
 
 .note-reset-token {

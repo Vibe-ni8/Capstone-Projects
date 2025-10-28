@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailsComponent } from './dashboard/components/details/details.component';
 import { AuthGuard } from 'projects/shared/src/lib/guards/auth.guard';
 import { ProfileComponent } from './dashboard/components/profile/profile.component';
+import { SettingsComponent } from './dashboard/components/settings/settings.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
       {path:'', redirectTo:'/dashboard/details', pathMatch:'full'},
       {path:'details', component:DetailsComponent},
       {path:'reports', component:DetailsComponent},
-      {path:'settings', component:DetailsComponent},
+      {path:'settings', component:SettingsComponent},
       {path:'profile', component:ProfileComponent}
   ]},
 ];
