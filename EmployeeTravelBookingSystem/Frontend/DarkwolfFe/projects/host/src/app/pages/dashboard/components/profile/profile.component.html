@@ -1,0 +1,70 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <img [src]="user.profileImage" alt="Profile" class="profile-image" />
+    <div class="profile-info">
+      <h2>{{ user.name }}</h2>
+      <p class="role">{{ user.role }}</p>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button 
+      [class.active]="activeTab === 'overview'"
+      (click)="setTab('overview')">Overview</button>
+    <button 
+      [class.active]="activeTab === 'contact'"
+      (click)="setTab('contact')">Contact</button>
+    <button 
+      [class.active]="activeTab === 'organization'"
+      (click)="setTab('organization')">Organization</button>
+  </div>
+
+  <div class="tab-content">
+    <div *ngIf="activeTab === 'overview'">
+      <h3>Profile Overview</h3>
+      <p><strong>Email:</strong> {{ user.contact.email }}</p>
+      <p><strong>Phone:</strong> {{ user.contact.phone }}</p>
+      <p><strong>Location:</strong> {{ user.contact.location }}</p>
+    </div>
+
+    <div *ngIf="activeTab === 'contact'">
+      <h3>Contact Information</h3>
+      <ul>
+        <li>Email: {{ user.contact.email }}</li>
+        <li>Phone: {{ user.contact.phone }}</li>
+        <li>Location: {{ user.contact.location }}</li>
+      </ul>
+    </div>
+
+    <div *ngIf="activeTab === 'organization'">
+      <h3>Organization Structure</h3>
+
+      <div class="org-flow">
+        <div class="org-level">
+          <div class="person manager">
+            <p class="name">{{ user.organization.reportingTo.name }}</p>
+            <p class="role">{{ user.organization.reportingTo.role }}</p>
+          </div>
+        </div>
+
+        <div class="org-level">
+          <div class="person current-user">
+            <div class="line up"></div>
+            <div class="line down"></div>
+            <p class="name">{{ user.name }}</p>
+            <p class="role">{{ user.role }}</p>
+          </div>
+        </div>
+
+        <div class="org-level">
+          <div 
+            class="person" 
+            *ngFor="let member of user.organization.reportsToHim">
+            <p class="name">{{ member.name }}</p>
+            <p class="role">{{ member.role }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

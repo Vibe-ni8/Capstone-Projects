@@ -10,7 +10,7 @@
       <img src="assets/logos/profile.jpg" alt="Profile" class="profile-img" />
       <div class="profile-menu" *ngIf="isProfileMenuOpen">
         <ul>
-          <li routerLink="/dashboard/profile">My Profile</li>
+          <li (click)="openProfilePlate()">My Profile</li>
           <li routerLink="/dashboard/settings">Settings</li>
           <li (click)="logout()">Logout</li>
         </ul>
@@ -27,3 +27,13 @@
     </ul>
   </div>
 </nav>
+
+<!-- Profile Overlay -->
+<div class="profile-plate" *ngIf="isProfilePlateOpen" (click)="onOverlayClick($event)">
+  <button class="close-button" (click)="closeProfilePlate()">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <div class="profile-plate-content">
+    <app-profile></app-profile>
+  </div>
+</div>

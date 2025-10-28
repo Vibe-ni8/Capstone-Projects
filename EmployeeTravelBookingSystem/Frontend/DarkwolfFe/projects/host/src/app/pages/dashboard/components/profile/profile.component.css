@@ -1,0 +1,244 @@
+.profile-container {
+  color: #fff;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #444;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.profile-info .role {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tabs button {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tabs button.active,
+.tabs button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.tab-content {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.org-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-level {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.person {
+  background: #222;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+  position: relative;
+}
+
+.person.current-user {
+    border: #ccc;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.person .name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.person .role {
+  margin: 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.line.up {
+  width: 2px;
+  height: 20px;
+  background: #555;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line.down {
+  width: 2px;
+  height: 20px;
+  background: #555;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.light-theme {
+
+& .profile-container {
+  color: #fff;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #444;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.profile-info .role {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tabs button {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tabs button.active,
+.tabs button:hover {
+  background: #333;
+  color: #fff;
+}
+
+.tab-content {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.org-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-level {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.person {
+  background: #222;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+  position: relative;
+}
+
+.person.current-user {
+    border: #ccc;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.person .name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.person .role {
+  margin: 0;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.line.up {
+  width: 2px;
+  height: 20px;
+  background: #555;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line.down {
+  width: 2px;
+  height: 20px;
+  background: #555;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+}

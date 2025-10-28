@@ -101,3 +101,70 @@
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+.profile-plate {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  border-width: 1px 0px;
+  border-style: solid;
+  z-index: 999;
+  animation: fadeInUp 0.3s ease forwards;
+  color: #fff;
+  width: 80%;
+  padding-top: 27px;
+}
+
+.profile-plate::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+.profile-plate-content {
+  position: relative;
+  height: 27rem;
+  border-radius: 12px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.close-button {
+  position: fixed;
+  top: 4px;
+  right: 8px;
+  background: none;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  color: #ccc;
+  border-color: #ccc;
+  cursor: pointer;
+  transition: color 0.1s ease;
+  z-index: 999;
+}
+
+.close-button:hover {
+  color: white;
+}
+
+.close-button:active {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

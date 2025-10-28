@@ -35,18 +35,18 @@ export class LoginComponent implements AfterViewInit {
   }
 
   // Section 1 start
-  processName : Process = Process.Login;
+  activeProcessName : Process = Process.Login;
   
   set setProcess(name : string) {
     switch(name.toLowerCase()){
       case 'login': {
-        this.processName = Process.Login; break;
+        this.activeProcessName = Process.Login; break;
       }
       case 'forgot' : {
-        this.processName = Process.Forgot; break;
+        this.activeProcessName = Process.Forgot; break;
       }
       case 'reset' : {
-        this.processName = Process.Reset; break;
+        this.activeProcessName = Process.Reset; break;
       }
     }
   }
@@ -77,7 +77,7 @@ export class LoginComponent implements AfterViewInit {
           setTimeout(() => {
             this.spinner.hide();
             this.partialReset(); // remove
-            this.router.navigate(['./dashboard/details']);
+            this.router.navigate(['/dashboard/details']);
           }, 3500);
         }
         else {
@@ -109,7 +109,7 @@ export class LoginComponent implements AfterViewInit {
           setTimeout(() => {
             this.spinner.hide();
             this.overallMessage = '';
-            this.processName = Process.Reset;
+            this.activeProcessName = Process.Reset;
           }, 3500);
         }
         else {
@@ -145,7 +145,7 @@ export class LoginComponent implements AfterViewInit {
           setTimeout(() => {
             this.spinner.hide();
             this.partialReset();
-            this.processName = Process.Login;
+            this.activeProcessName = Process.Login;
           }, 3500);
         }
         else {

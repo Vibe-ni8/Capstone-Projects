@@ -1,4 +1,6 @@
 <div class="dashboard">
   <app-nav></app-nav>
-  <router-outlet></router-outlet>
+  <div (click)="closeSidebar()">
+    <router-outlet></router-outlet>
+  </div>
 </div>

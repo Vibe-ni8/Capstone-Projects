@@ -5,7 +5,7 @@
     <div class="dflex darkwolf-disclaimer-head">
 
         <div class="dflex">
-            <h2 class="login-head">{{processName}}</h2>
+            <h2 class="login-head">{{activeProcessName}}</h2>
         </div>
 
     </div>
@@ -20,7 +20,7 @@
                 <span class="gap msg-error">{{overallMessage}}</span>
             </div>
 
-            <ng-container [ngSwitch]="processName">
+            <ng-container [ngSwitch]="activeProcessName">
             <!-- Login box -->
             <form *ngSwitchCase="'Login'" #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="login gap">
                 <!-- Username -->
