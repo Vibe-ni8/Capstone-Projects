@@ -1,0 +1,29 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <button class="menu-btn" (click)="toggleSidebar()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="nav-right">
+    <div class="profile-container" (click)="toggleProfileMenu()">
+      <img src="assets/logos/profile.jpg" alt="Profile" class="profile-img" />
+      <div class="profile-menu" *ngIf="isProfileMenuOpen">
+        <ul>
+          <li routerLink="/dashboard/profile">My Profile</li>
+          <li routerLink="/dashboard/settings">Settings</li>
+          <li (click)="logout()">Logout</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" [class.open]="isSidebarOpen">
+    <ul>
+      <li routerLink="/dashboard/details" routerLinkActive="active">Dashboard</li>
+      <li routerLink="/dashboard/reports" routerLinkActive="active">Reports</li>
+      <li routerLink="/dashboard/settings" routerLinkActive="active">Settings</li>
+    </ul>
+  </div>
+</nav>

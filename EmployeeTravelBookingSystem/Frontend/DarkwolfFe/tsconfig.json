@@ -17,6 +17,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
+      "@host/*": [
+        "projects/host/src/*"
+      ],
       "shared": [
         "projects/shared/src/public-api.ts"
       ]

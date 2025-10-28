@@ -1,0 +1,178 @@
+.logo {
+    width: 250px;
+    height: 250px;
+}
+.logo-small {
+    width: 50px;
+    height: 50px;
+}
+
+.button-image {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    border-radius: 100%;
+}
+.button-image:hover {
+    background-color: gray;
+}
+
+.content-center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    & h5 {
+        margin-bottom: 0;
+        margin-top: 65px;
+    }
+    & h1 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+}
+
+.slide-fade {
+    animation: moveFade 5s ease-in-out forwards;
+}
+.slide-fade-Mirrored {
+    animation: moveFadeMirrored 5s ease-in-out forwards;
+}
+
+@keyframes moveFade {
+    0% {
+      transform: scaleX(1) translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: scaleX(1) translateX(0);
+      opacity: 1;
+    }
+}
+@keyframes moveFadeMirrored {
+    0% {
+      transform: scaleX(-1) translateX(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: scaleX(-1) translateX(0);
+      opacity: 1;
+    }
+}
+
+.fade {
+    animation: fade 5s ease-in-out forwards, pulse 2s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes pulse {
+  0% { filter: drop-shadow(0 0 5px #00bfff); }
+  50% { filter: drop-shadow(0 0 15px #00bfff); }
+  100% { filter: drop-shadow(0 0 5px #00bfff); }
+}
+
+.darkwolf-disclaimer {
+  max-width: 100%;
+  margin: 100px auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0px;
+  background-color: #1a1a1a;
+  color: #ccc;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.darkwolf-disclaimer h2 {
+  color: #f5f5f5;
+  margin-bottom: 20px;
+  font-size: 24px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.darkwolf-disclaimer p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.darkwolf-footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid #333;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3 {
+  color: #f5f5f5;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+}
+
+.footer-section ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #222;
+  padding-top: 10px;
+}
+
+.mini-img {
+    width: 20px;
+    height: 20px;
+    transform: translateY(5px);
+}

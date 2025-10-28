@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import { PageNotFoundComponent } from 'shared';
+
+import { HomeComponent } from '@host/app/pages/home/home.component';
+import { LoginComponent } from '@host/app/pages/home/components/login/login.component';
+import { PrivacyPolicyComponent } from '@host/app/pages/home/components/privacy-policy/privacy-policy.component';
+import { TermsOfServiceComponent } from '@host/app/pages/home/components/terms-of-service/terms-of-service.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -10,9 +14,12 @@ const routes: Routes = [
   {path:'home', component:HomeComponent, 
     children:[
       {path:'login', component:LoginComponent, data:{ section:'login'}},
-      {path:'forgot-password', component:LoginComponent, data:{ section:'forgot'}}
+      {path:'forgot-password', component:LoginComponent, data:{ section:'forgot'}},
+      {path:'privacy-policy', component:PrivacyPolicyComponent},
+      {path:'terms-of-service', component:TermsOfServiceComponent}
     ]
   },
+  {path:'dashboard', loadChildren:()=>import('@host/app/pages/page.module').then(pm => pm.PageModule)},
   {path:'**', component:PageNotFoundComponent},
 ];
 

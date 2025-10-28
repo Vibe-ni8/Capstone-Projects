@@ -2,8 +2,13 @@
  * Public API Surface of shared
  */
 
-export * from './lib/shared.service';
-export * from './lib/shared.component';
-export * from './lib/shared.module';
+// modules
+export * from './lib/shared-lib.module'
 
-export * from './lib/service/token.service';
+// components
+export * from './lib/components/loader/loader.component';
+export * from './lib/components/page-not-found/page-not-found.component';
+
+// services
+export * from './lib/services/token.service';
+export * from './lib/services/loader.service';
