@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavComponent } from './components/nav/nav.component';
 import { UserService } from './services/user.service';
-import { LoaderService } from 'shared';
+import { LoaderService, ToasterService } from 'shared';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,7 @@ import { LoaderService } from 'shared';
 })
 export class DashboardComponent {
 
-  constructor(private userService:UserService, private spinner:LoaderService) {
+  constructor(private userService:UserService, private spinner:LoaderService, private toasterService:ToasterService) {
     console.log('Dashboared - Initiated');
   }
 
@@ -30,6 +30,7 @@ export class DashboardComponent {
         else {
           console.log('Dashboared - Data fetch failed - User not found');
           this.spinner.hide();
+          this.toasterService.showError('User not Found - Log again to avoid fault data');
           this.username = 'User not Found';
           this.email = 'Log again to avoid fault data';
         }
@@ -37,6 +38,7 @@ export class DashboardComponent {
       error: () => {
         console.log('Dashboared - Data fetch failed - Server error');
         this.spinner.hide();
+        this.toasterService.showError('Server Error - Log again to avoid fault data');
         this.username = 'Server Error';
         this.email = 'Log again to avoid fault data';
       }

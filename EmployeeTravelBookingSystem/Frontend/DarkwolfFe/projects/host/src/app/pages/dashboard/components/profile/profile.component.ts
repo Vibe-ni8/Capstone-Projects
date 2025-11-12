@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoaderService } from 'shared';
+import { LoaderService, ToasterService } from 'shared';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserService } from '../../services/user.service';
 })
 export class ProfileComponent {
 
-  constructor(private spinner:LoaderService, private userService:UserService) {
+  constructor(private spinner:LoaderService, private userService:UserService, private toasterService:ToasterService) {
     console.log('Dashboared_Profile - Initiated');
   }
 
@@ -26,6 +26,7 @@ export class ProfileComponent {
         else {
           console.log('Dashboared - Data fetch failed - User not found');
           this.spinner.hideMini();
+          this.toasterService.showError('User not Found - Log again to avoid fault data');
           this.user = this.defaultUser;
           this.user.name = 'User not found - Log again to avoid fault data';
         }
@@ -33,6 +34,7 @@ export class ProfileComponent {
       error: () => {
         console.log('Dashboared - Data fetch failed - Server error');
         this.spinner.hideMini();
+        this.toasterService.showError('Server Error - Log again to avoid fault data');
         this.user = this.defaultUser;
         this.user.name = 'Server error - Log again to avoid fault data';
       }

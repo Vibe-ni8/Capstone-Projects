@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
-import { LoaderService } from 'shared';
+import { LoaderService, ToasterService } from 'shared';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ import { LoaderService } from 'shared';
 export class LoginComponent implements AfterViewInit {
   
   constructor(private route: ActivatedRoute, private authService: AuthService, 
-    private router:Router, private spinner:LoaderService) 
+    private router:Router, private spinner:LoaderService, private toasterService:ToasterService) 
   {
     console.log('Login - Login Initiated');
   }
@@ -80,18 +80,21 @@ export class LoginComponent implements AfterViewInit {
         if (res) {
           console.log('Login - Login succeed');
           this.spinner.hide();
+          this.toasterService.showInfo('Login succeed');
           this.partialReset();
           this.router.navigate(['/dashboard/details'])
         }
         else {
           console.log('Login - Login failed - Invalid credentials')
           this.spinner.hide();
+          this.toasterService.showError('Invalid Credentials');
           this.overallMessage = 'Invalid Credentials';
         }
       },
       error: () => {
         console.log('Login - Login failed - server error')
         this.spinner.hide();
+        this.toasterService.showError('Internal Server Error');
         this.overallMessage = 'Internal Server Error';
       }
     });
@@ -107,18 +110,21 @@ export class LoginComponent implements AfterViewInit {
         if (res) {
           console.log('Login - Forgot password succeed');
           this.spinner.hide();
+          this.toasterService.showInfo(`Reset token is sent to ${this.email}`);
           this.overallMessage = '';
           this.activeProcessName = Process.Reset;
         }
         else {
           console.log('Login - Forgot password failed');
           this.spinner.hide();
+          this.toasterService.showError('Email not registered');
           this.overallMessage = 'Email not registered';
         }
       },
       error: () => {
         console.log('Login - Forgot password failed - Server error');
         this.spinner.hide();
+        this.toasterService.showError('Internal Server Error');
         this.overallMessage = 'Internal Server Error';
       }
     });
@@ -138,18 +144,21 @@ export class LoginComponent implements AfterViewInit {
         if (res) {
           console.log('Login - Change password succeed');
           this.spinner.hide();
+          this.toasterService.showInfo('Password changed successfully');
           this.partialReset();
           this.activeProcessName = Process.Login;
         }
         else {
           console.log('Login - Change password failed');
           this.spinner.hide();
-          this.overallMessage = 'Reset Password Failed';
+          this.toasterService.showError('Change password failed');
+          this.overallMessage = 'Change password failed';
         }
       },
       error: () => {
         console.log('Login - Change password failed - Server error');
         this.spinner.hide();
+        this.toasterService.showError('Internal Server Error');
         this.overallMessage = 'Internal Server Error';
       }
     });

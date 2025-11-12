@@ -5,6 +5,8 @@ import { ThemeService } from 'shared';
   selector: 'app-root',
   template: `
   <div class="page">
+    <lib-loader></lib-loader>
+    <lib-toaster></lib-toaster>
     <router-outlet></router-outlet>
   </div>
   `,
