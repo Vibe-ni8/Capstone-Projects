@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, tap, throwError } from 'rxjs'
-import {ForgotPasswordRequest, LoginRequest, ResetPasswordRequest} from '@host/app/core/models/Model';
+import {ForgotPasswordRequest, LoginRequest, ResetPasswordRequest} from '@host/app/core/models/RequestModels';
 import { TokenService } from 'shared';
 
 @Injectable()
 export class AuthService {
 
-  baseUrl = 'https://localhost:7070';
+  private baseUrl = 'https://localhost:7070';
 
   constructor(private http:HttpClient, private tokenService:TokenService) {}
 

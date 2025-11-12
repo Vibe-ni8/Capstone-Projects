@@ -11,14 +11,14 @@ namespace Darkwolf.AuthService.Solution.Controllers;
 [Route("api/[controller]")]
 public class AuthController : Controller
 {
-    private readonly UserService _userService;
+    private readonly TokenService _tokenService;
     private readonly PasswordService _passwordService;
     private readonly ILoggerManager<AuthController> _logger;
 
-    public AuthController(UserService userService, PasswordService passwordService,
+    public AuthController(TokenService tokenService, PasswordService passwordService,
         ILoggerManager<AuthController> logger)
     {
-        _userService = userService;
+        _tokenService = tokenService;
         _passwordService = passwordService;
         _logger = logger;
     }
@@ -35,7 +35,7 @@ public class AuthController : Controller
         if (string.IsNullOrWhiteSpace(request.Username) || string.IsNullOrWhiteSpace(request.Password))
             return BadRequest(new { Message = ResponseMessage.LoginCredentialsRequired });
 
-        var token = await _userService.GenerateToken(request);
+        var token = await _tokenService.GenerateToken(request);
         if (token == null)
             return Unauthorized(new { Message = ResponseMessage.InvalidCredentials });
 

@@ -15,9 +15,8 @@ export class TokenService {
   private decodedToken: any;
 
   public setToken(token: string) {
-    this.decodedToken = jwtDecode(token);
-    console.log('Decoded Token',this.decodedToken);
     localStorage.setItem('authToken', token);
+    this.decodedToken = jwtDecode(token);
   }
 
   public getToken(): string | null {

@@ -7,7 +7,12 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class TermsOfServiceComponent implements AfterViewInit {
 
+  constructor() {
+    console.log('Terms of service - Initiated');
+  }
+
   ngAfterViewInit() {
+    console.log('Terms of service - Scroll to target section');
     this.scrollTo();
   }
 

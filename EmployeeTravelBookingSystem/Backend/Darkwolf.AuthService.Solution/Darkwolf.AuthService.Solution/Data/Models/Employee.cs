@@ -11,16 +11,16 @@ public class Employee : BaseEntity
 
     [Key]
     [Column("emp_id")]
-    public string EmpId { get; set; } = null!;
+    public string EmployeeId { get; set; } = null!;
 
     [Column("emp_name")]
-    public string EmpName { get; set; } = null!;
+    public string EmployeeName { get; set; } = null!;
 
     [Column("emp_email")]
-    public string EmpEmail { get; set; } = null!;
+    public string EmployeeEmail { get; set; } = null!;
 
     [Column("emp_password")]
-    public string EmpPassword { get; set; } = null!;
+    public string EmployeePassword { get; set; } = null!;
 
     [Column("role_id")]
     public string RoleId { get; set; } = null!;
@@ -33,4 +33,10 @@ public class Employee : BaseEntity
 
     [Column("token_generated_date")]
     public DateTime? TokenGeneratedDate { get; set; } = null;
+
+    [Column("phone")]
+    public string? Phone { get; set; } = null;
+
+    [Column("loc_id")]
+    public string LocationId { get; set; } = null!;
 }

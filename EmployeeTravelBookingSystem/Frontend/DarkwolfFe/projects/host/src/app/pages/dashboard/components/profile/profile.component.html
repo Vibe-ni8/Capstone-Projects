@@ -1,3 +1,4 @@
+<lib-mini-loader></lib-mini-loader>
 <div class="profile-container">
   <div class="profile-header">
     <img [src]="user.profileImage" alt="Profile" class="profile-image" />
@@ -25,6 +26,7 @@
       <p><strong>Email:</strong> {{ user.contact.email }}</p>
       <p><strong>Phone:</strong> {{ user.contact.phone }}</p>
       <p><strong>Location:</strong> {{ user.contact.location }}</p>
+      <p *ngIf="user.organization.reportingTo"><strong>Reports to:</strong> {{ user.organization.reportingTo.name }}</p>
     </div>
 
     <div *ngIf="activeTab === 'contact'">
@@ -40,7 +42,7 @@
       <h3>Organization Structure</h3>
 
       <div class="org-flow">
-        <div class="org-level">
+        <div class="org-level" *ngIf="user.organization.reportingTo">
           <div class="person manager">
             <p class="name">{{ user.organization.reportingTo.name }}</p>
             <p class="role">{{ user.organization.reportingTo.role }}</p>
@@ -49,8 +51,8 @@
 
         <div class="org-level">
           <div class="person current-user">
-            <div class="line up"></div>
-            <div class="line down"></div>
+            <div class="line up" *ngIf="user.organization.reportingTo"></div>
+            <div class="line down" *ngIf="user.organization.reportsToHim.length > 0"></div>
             <p class="name">{{ user.name }}</p>
             <p class="role">{{ user.role }}</p>
           </div>

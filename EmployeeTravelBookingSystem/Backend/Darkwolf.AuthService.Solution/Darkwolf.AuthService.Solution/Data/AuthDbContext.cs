@@ -11,23 +11,27 @@ public class AuthDbContext : DbContext
 
     public DbSet<Role> Roles => Set<Role>();
 
+    public DbSet<EmployeeDetails> EmployeeDetails => Set<EmployeeDetails>();
+
+    public DbSet<Location> Locations => Set<Location>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Employee>(b =>
         {
             b.ToTable("employee");
-            b.HasKey(e => e.EmpId);
+            b.HasKey(e => e.EmployeeId);
 
-            b.Property(e => e.EmpId).HasColumnName("emp_id")
-            .HasColumnType("Varchar(10)").HasMaxLength(10);
+            b.Property(e => e.EmployeeId).HasColumnName("emp_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
-            b.Property(e => e.EmpName).HasColumnName("emp_name")
+            b.Property(e => e.EmployeeName).HasColumnName("emp_name")
             .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
 
-            b.Property(e => e.EmpEmail).HasColumnName("emp_email")
+            b.Property(e => e.EmployeeEmail).HasColumnName("emp_email")
             .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
 
-            b.Property(e => e.EmpPassword).HasColumnName("emp_password")
+            b.Property(e => e.EmployeePassword).HasColumnName("emp_password")
             .HasColumnType("Varchar(100)").HasMaxLength(100).IsRequired();
 
             b.Property(e => e.RoleId).HasColumnName("role_id")
@@ -41,6 +45,12 @@ public class AuthDbContext : DbContext
 
             b.Property(e => e.TokenGeneratedDate).HasColumnName("token_generated_date")
             .HasColumnType("datetime");
+
+            b.Property(e => e.Phone).HasColumnName("phone")
+            .HasColumnType("Varchar(15)").HasMaxLength(15);
+
+            b.Property(e => e.LocationId).HasColumnName("loc_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
         });
 
         modelBuilder.Entity<Role>(b =>
@@ -49,10 +59,41 @@ public class AuthDbContext : DbContext
             b.HasKey(e => e.RoleId);
 
             b.Property(e => e.RoleId).HasColumnName("role_id")
-            .HasColumnType("Varchar(10)").HasMaxLength(10);
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
             b.Property(e => e.RoleName).HasColumnName("role_name")
             .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
+        });
+
+        modelBuilder.Entity<EmployeeDetails>(b =>
+        {
+            b.ToTable("emp_details");
+            b.HasKey(e => e.EmpId);
+
+            b.Property(e => e.EmpId).HasColumnName("emp_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
+
+            b.Property(e => e.ReportingManagerId).HasColumnName("reporting_mgr_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10);
+
+            b.Property(e => e.HomeManagerId).HasColumnName("home_mgr_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10);
+
+            b.Property(e => e.WorkManagerId).HasColumnName("wrk_mgr_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10);
+        });
+
+        modelBuilder.Entity<Location>(b =>
+        {
+            b.ToTable("location");
+            b.HasKey(e => e.LocationId);
+
+            b.Property(e => e.LocationId).HasColumnName("loc_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
+
+            b.Property(e => e.LocationShortName).HasColumnName("loc_short_name")
+            .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
+            b.HasIndex(e => e.LocationShortName).IsUnique();
         });
     }
 }

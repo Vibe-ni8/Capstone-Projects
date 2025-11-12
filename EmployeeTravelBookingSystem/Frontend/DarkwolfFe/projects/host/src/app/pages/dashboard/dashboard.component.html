@@ -1,5 +1,6 @@
+<lib-loader></lib-loader>
 <div class="dashboard">
-  <app-nav></app-nav>
+  <app-nav id="nav-target" [username]="username" [email]="email"></app-nav>
   <div class="dashboard-content" (click)="closeMenus()">
     <router-outlet></router-outlet>
   </div>

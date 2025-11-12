@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'shared';
 
@@ -9,12 +9,17 @@ import { TokenService } from 'shared';
 })
 export class NavComponent {
 
-  constructor(private tokenService:TokenService, private router: Router) {}
+  constructor(private tokenService:TokenService, private router: Router) {
+    console.log('Dashboared_Navbar - Initiated');
+  }
 
-  isSidebarOpen = false;
-  isProfileMenuOpen = false;
-  isProfilePlateOpen = false;
-  isSettingPlateOpen = false;
+  @Input() username: string = '';
+  @Input() email: string = '';
+
+  isSidebarOpen:boolean = false;
+  isProfileMenuOpen:boolean = false;
+  isProfilePlateOpen:boolean = false;
+  isSettingPlateOpen:boolean = false;
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
@@ -38,10 +43,12 @@ export class NavComponent {
   }
 
   openProfilePlate() {
+    this.isProfileMenuOpen = false;
     this.isProfilePlateOpen = true;
   }
 
   openSettingPlate() {
+    this.isProfileMenuOpen = false;
     this.isSettingPlateOpen = true;
   }
 
@@ -51,6 +58,7 @@ export class NavComponent {
   }
 
   logout() {
+    console.log('Dashboared_Navbar - Logout triggered');
     this.tokenService.clearToken();
     this.router.navigate(['/home/login'])
   }

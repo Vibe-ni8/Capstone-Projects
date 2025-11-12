@@ -53,7 +53,7 @@ public class PasswordService
 
         // send the reset token to the user via email
         await _emailService.SendEmailAsync(EmailAddress.NoReplyDarkwolf, EmailAddress.DisplayName, request.Email, GetString("subject"), 
-            string.Format(GetString("body"), user.EmpName, resetToken, tokenExpireDate, "SecretVault"));
+            string.Format(GetString("body"), user.EmployeeName, resetToken, tokenExpireDate, "SecretVault"));
 
         // log reset token
         _logger.LogInfo(LogMessage.ResetTokenLog, resetToken);

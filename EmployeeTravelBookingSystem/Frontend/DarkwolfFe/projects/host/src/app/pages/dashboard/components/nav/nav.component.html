@@ -6,8 +6,14 @@
   </div>
 
   <div class="nav-right">
-    <div class="profile-container" (click)="toggleProfileMenu()">
-      <img src="assets/logos/profile.jpg" alt="Profile" class="profile-img" />
+    <div class="profile-container">
+      <div class="dflex">
+        <div class="profile-name">
+          <h5>{{username}}</h5>
+          <p>{{email}}</p>
+        </div>
+        <img src="assets/logos/profile.jpg" alt="Profile" (click)="toggleProfileMenu()" class="profile-img" />
+      </div>
       <div class="profile-menu" *ngIf="isProfileMenuOpen">
         <ul>
           <li (click)="openProfilePlate()">My Profile</li>

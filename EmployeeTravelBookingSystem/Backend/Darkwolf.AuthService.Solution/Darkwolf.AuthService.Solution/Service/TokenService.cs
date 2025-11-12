@@ -8,14 +8,14 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Darkwolf.AuthService.Solution.Service;
 
-public class UserService
+public class TokenService
 {
     private readonly IEmployeeRepository _employeeRepository;
     private readonly IJwtTokenService _jwtTokenService;
-    private readonly ILoggerManager<UserService> _logger;
+    private readonly ILoggerManager<TokenService> _logger;
 
-    public UserService(IEmployeeRepository employeeRepository, 
-        IJwtTokenService jwtTokenService,ILoggerManager<UserService> logger)
+    public TokenService(IEmployeeRepository employeeRepository, 
+        IJwtTokenService jwtTokenService,ILoggerManager<TokenService> logger)
     {
         _employeeRepository = employeeRepository;
         _jwtTokenService = jwtTokenService;
@@ -34,14 +34,14 @@ public class UserService
             return null;
         }
 
-        if (!VerifyPassword(user, request.Password, user.EmpPassword))
+        if (!VerifyPassword(user, request.Password, user.EmployeePassword))
         {
-            _logger.LogWarn(LogMessage.InvalidPassword, user.EmpId);
+            _logger.LogWarn(LogMessage.InvalidPassword, user.EmployeeId);
             return null;
         }
 
-        var role = (await _employeeRepository.FindRoleById(user.EmpId)).RoleName;
-        var token = _jwtTokenService.GenerateToken(user.EmpId, role);
+        var role = (await _employeeRepository.FindRoleByIdAsync(user.EmployeeId))?.RoleName;
+        var token = _jwtTokenService.GenerateToken(user.EmployeeId, role!);
 
         _logger.LogInfo(LogMessage.EndMethod, nameof(GenerateToken));
 

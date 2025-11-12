@@ -1,5 +1,5 @@
-using Darkwolf.AuthService.Solution.Utils.Common;
 using Darkwolf.AuthService.Solution.Utils.Extensions;
+using Darkwolf.Shared.Authentication;
 using Darkwolf.Shared.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,16 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.RegisterSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy
-            .AllowAnyOrigin()    // Or use .WithOrigins("https://your-angular-app.com")
-            .AllowAnyMethod()
-            .AllowAnyHeader();
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     });
 });
 
@@ -41,7 +39,17 @@ app.UseDarkwolfGlobalException();
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.MapWhen(context => context.Request.Path.StartsWithSegments("/api/auth"), appBuilder =>
+{
+    // No auth middleware here
+    appBuilder.UseRouting();
+    appBuilder.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllers(); // or Map specific endpoints
+    });
+});
+
+app.UseDarkwolfAuth();
 
 app.MapControllers();
 

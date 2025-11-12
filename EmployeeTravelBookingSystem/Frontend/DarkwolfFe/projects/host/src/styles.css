@@ -8,8 +8,8 @@
 
 .dflex-start {
     display: flex;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .dflex-align-start {

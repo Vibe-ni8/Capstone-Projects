@@ -9,6 +9,9 @@ export class HomeComponent {
 
   wolfLookInside : boolean = false;
 
-  changeWolfPosition() { this.wolfLookInside = !this.wolfLookInside; }
+  changeWolfPosition() { 
+    this.wolfLookInside = !this.wolfLookInside; 
+    console.log('Home - Wolf position changed');
+  }
   
 }

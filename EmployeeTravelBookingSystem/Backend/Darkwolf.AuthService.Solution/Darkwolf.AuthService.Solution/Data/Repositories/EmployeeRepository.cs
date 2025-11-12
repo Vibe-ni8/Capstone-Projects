@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using Darkwolf.AuthService.Solution.Data.Interface;
+﻿using Darkwolf.AuthService.Solution.Data.Interface;
 using Darkwolf.AuthService.Solution.Data.Models;
+using Darkwolf.AuthService.Solution.DTO;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,21 +18,81 @@ public class EmployeeRepository : IEmployeeRepository
     public async Task<Employee?> FindByEmpIdOrEmailAsync(string username)
     {
         return await _db.Employees.FirstOrDefaultAsync(e => 
-            username.Contains("@") ? e.EmpEmail == username : e.EmpId == username);
+            username.Contains("@") ? e.EmployeeEmail == username : e.EmployeeId == username);
     }
 
     public async Task<Employee?> FindByEmailAsync(string email)
     {
         return await _db.Employees
-            .FirstOrDefaultAsync(e => e.EmpEmail == email);
+            .FirstOrDefaultAsync(e => e.EmployeeEmail == email);
     }
 
-    public async Task<Role> FindRoleById(string employeeId)
+    public async Task<Role?> FindRoleByIdAsync(string employeeId)
     {
         return await _db.Employees
-            .Where(e => employeeId.Equals(e.EmpId))
+            .Where(e => employeeId.Equals(e.EmployeeId))
             .Join(_db.Roles, e => e.RoleId, r => r.RoleId, (e, r) => r)
-            .FirstAsync();
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<Role?> FindRoleAsync(Employee employee)
+    {
+        return await _db.Roles
+            .Where(r => employee.RoleId.Equals(r.RoleId))
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<Location?> FindLocationByIdAsync(string employeeId)
+    {
+        return await _db.Employees
+            .Where(e => employeeId.Equals(e.EmployeeId))
+            .Join(_db.Locations, e => e.LocationId, l => l.LocationId, (e, l) => l)
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<Employee?> FindUserReportsToAsync(string employeeId)
+    {
+        return await _db.EmployeeDetails
+            .Where(e => employeeId.Equals(e.EmpId))
+            .Join(_db.Employees, ed => ed.ReportingManagerId, e => e.EmployeeId, (ed, e) => e)
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<List<Employee>> FindUsersReportsToHimAsync(string employeeId)
+    {
+        return await _db.EmployeeDetails
+            .Where(e => employeeId.Equals(e.ReportingManagerId))
+            .Join(_db.Employees, ed => ed.EmpId, e => e.EmployeeId, (ed, e) => e)
+            .ToListAsync();
+    }
+
+    public async Task<EmployeeWithRole?> GetWithRoleAsync(Employee employee)
+    {
+        return await _db.Roles
+            .Where(r => employee.RoleId.Equals(r.RoleId))
+            .Select(r => new EmployeeWithRole()
+            {
+                EmpId = employee.EmployeeId,
+                Name = employee.EmployeeName,
+                Email = employee.EmployeeEmail,
+                RoleId = employee.RoleId,
+                Role = r.RoleName
+            })
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<List<EmployeeWithRole>> GetWithRoleAsync(List<Employee> employees)
+    {
+        return (await _db.Roles.ToListAsync())
+            .Join(employees, r => r.RoleId, e => e.RoleId, (r, e) => new {e, r})
+            .Select(joined => new EmployeeWithRole()
+            {
+                EmpId = joined.e.EmployeeId,
+                Name = joined.e.EmployeeName,
+                Email = joined.e.EmployeeEmail,
+                RoleId = joined.e.RoleId,
+                Role = joined.r.RoleName
+            }).ToList();
     }
 
     public async Task SetResetToken(Employee employee, string resetToken, DateTime tokenGeneratedDate)
@@ -47,7 +107,7 @@ public class EmployeeRepository : IEmployeeRepository
     {
         employee.ResetToken = null;
         employee.TokenGeneratedDate = null;
-        employee.EmpPassword = new PasswordHasher<Employee>().HashPassword(employee, newPassword);
+        employee.EmployeePassword = new PasswordHasher<Employee>().HashPassword(employee, newPassword);
         _db.Employees.Update(employee);
         await _db.SaveChangesAsync();
     }

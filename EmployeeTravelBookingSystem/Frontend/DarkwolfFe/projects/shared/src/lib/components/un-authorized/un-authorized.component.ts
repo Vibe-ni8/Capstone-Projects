@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UnAuthorizedComponent {
 
+  constructor() {
+    console.log('UnAuthorized Page - Initiated');
+  }
+
 }

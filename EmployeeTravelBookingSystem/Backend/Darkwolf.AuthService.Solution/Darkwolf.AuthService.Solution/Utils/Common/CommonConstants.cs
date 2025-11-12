@@ -10,6 +10,7 @@ public static class LogMessage
     public const string ResetTokenNotGeneratedOrInvalid = "Reset failed: Reset token not generated or invalid";
     public const string ResetTokenExpired = "Reset failed: Reset token expired";
     public const string ResetTokenLog = "Generated Reset token {Token}";
+    public const string UserNotFound = "User not found";
 }
 
 public static class ExceptionMessage
@@ -17,6 +18,7 @@ public static class ExceptionMessage
     public const string JwtNotConfigured = "JWT settings not configured";
     public const string ConnectionStringNotConfigured = "ConnectionString not configured";
     public const string DarkwolfEmailNotConfigured = "Darkwolf email config not configured";
+    public const string UserIdNotSetOnMiddleware = "Middlerware failed: User Id not set";
 }
 
 public static class ResponseMessage
@@ -32,6 +34,7 @@ public static class ResponseMessage
     public const string ResetTokenRequired = "Reset token is required";
     public const string InvalidUser = "Invalid user";
     public const string InvalidResetToken = "Invalid reset token";
+    public const string UserNotFound = "User not found";
 }
 
 public static class FieldName
@@ -54,4 +57,9 @@ public static class EmailAddress
 {
     public const string DisplayName = "Darkwolf Org";
     public const string NoReplyDarkwolf = "noreply@darkwolf.com";
+}
+
+public static class Keys
+{
+    public const string UserId = "UserId";
 }

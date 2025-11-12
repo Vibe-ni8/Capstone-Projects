@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class DetailsComponent {
 
-  constructor(private router:Router) {}
+  constructor(private router:Router) {
+    console.log('Dashboared_Details - Initiated');
+  }
 
   modules = [
     { title: 'Travel Booking', description: 'Manage and view travel bookings', icon: 'fa fa-plane' },

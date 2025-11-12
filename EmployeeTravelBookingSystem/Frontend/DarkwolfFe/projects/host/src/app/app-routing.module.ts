@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from 'shared';
+import { PageNotFoundComponent, UnAuthorizedComponent } from 'shared';
 
 import { HomeComponent } from '@host/app/pages/home/home.component';
 import { LoginComponent } from '@host/app/pages/home/components/login/login.component';
@@ -20,6 +20,7 @@ const routes: Routes = [
     ]
   },
   {path:'dashboard', loadChildren:()=>import('@host/app/pages/page.module').then(pm => pm.PageModule)},
+  {path:'un-authorized', component:UnAuthorizedComponent},
   {path:'**', component:PageNotFoundComponent},
 ];
 

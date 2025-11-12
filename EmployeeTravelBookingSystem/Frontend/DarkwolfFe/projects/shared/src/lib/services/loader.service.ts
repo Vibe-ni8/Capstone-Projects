@@ -16,5 +16,16 @@ export class LoaderService {
   hide() {
     this._loading.next(false);
   }
+
+  private _miniLoading = new BehaviorSubject<boolean>(false);
+  miniLoading = this._miniLoading.asObservable();
+
+  showMini() {
+    this._miniLoading.next(true);
+  }
+
+  hideMini() {
+    this._miniLoading.next(false);
+  }
   
 }

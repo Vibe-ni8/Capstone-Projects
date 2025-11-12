@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedLibModule } from 'shared';
+import { AuthInterceptor, SharedLibModule } from 'shared';
 import { HomeComponent } from '@host/app/pages/home/home.component';
 import { LoginComponent } from '@host/app/pages/home/components/login/login.component';
 import { PrivacyPolicyComponent } from '@host/app/pages/home/components/privacy-policy/privacy-policy.component';
@@ -26,7 +26,9 @@ import { PageModule } from '@host/app/pages/page.module';
     SharedLibModule,
     PageModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

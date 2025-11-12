@@ -7,6 +7,7 @@ import { NavComponent } from './dashboard/components/nav/nav.component';
 import { DetailsComponent } from './dashboard/components/details/details.component';
 import { ProfileComponent } from './dashboard/components/profile/profile.component';
 import { SettingsComponent } from './dashboard/components/settings/settings.component';
+import { SharedLibModule } from 'shared';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SettingsComponent } from './dashboard/components/settings/settings.comp
   ],
   imports: [
     CommonModule,
-    PageRoutingModule
+    PageRoutingModule,
+    SharedLibModule
   ]
 })
 export class PageModule { }

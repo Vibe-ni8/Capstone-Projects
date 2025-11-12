@@ -15,15 +15,19 @@ export class LoginComponent implements AfterViewInit {
   
   constructor(private route: ActivatedRoute, private authService: AuthService, 
     private router:Router, private spinner:LoaderService) 
-  {}
+  {
+    console.log('Login - Login Initiated');
+  }
   
   // life cycles
   ngOnInit() {
+    console.log('Login - Set section based on route data');
     this.setProcess = this.route.snapshot.data['section'];
     this.overallMessage = '';
   }
   
   ngAfterViewInit() {
+    console.log('Login - Scroll to target section');
     this.scrollTo();
   }
 
@@ -38,6 +42,7 @@ export class LoginComponent implements AfterViewInit {
   activeProcessName : Process = Process.Login;
   
   set setProcess(name : string) {
+    console.log('Login - Change section to :', name);
     switch(name.toLowerCase()){
       case 'login': {
         this.activeProcessName = Process.Login; break;
@@ -59,6 +64,7 @@ export class LoginComponent implements AfterViewInit {
   confirmPassword : string = '';
 
   partialReset() {
+    console.log('Login - Clear fields');
     this.overallMessage = '';
     this.email = '';
     this.password = '';
@@ -66,30 +72,25 @@ export class LoginComponent implements AfterViewInit {
   }
 
   login(loginForm : NgForm) {
+    console.log('Login - Login triggered');
     this.spinner.show();
     this.scrollTo();
     this.authService.login(loginForm.value).subscribe({
       next: res => {
         if (res) {
-          // this.spinner.hide();
-          // this.partialReset(); // remove
-          // this.router.navigate(['./dashboard/details']);
-          setTimeout(() => {
-            this.spinner.hide();
-            this.partialReset(); // remove
-            this.router.navigate(['/dashboard/details']);
-          }, 3500);
+          console.log('Login - Login succeed');
+          this.spinner.hide();
+          this.partialReset();
+          this.router.navigate(['/dashboard/details'])
         }
         else {
-          // this.spinner.hide();
-          // this.overallMessage = 'Invalid Credentials';
-          setTimeout(() => {
-            this.spinner.hide();
-            this.overallMessage = 'Invalid Credentials';
-          }, 3500);
+          console.log('Login - Login failed - Invalid credentials')
+          this.spinner.hide();
+          this.overallMessage = 'Invalid Credentials';
         }
       },
       error: () => {
+        console.log('Login - Login failed - server error')
         this.spinner.hide();
         this.overallMessage = 'Internal Server Error';
       }
@@ -97,31 +98,26 @@ export class LoginComponent implements AfterViewInit {
   }
 
   confirmSubmit(forgotForm : NgForm) {
+    console.log('Login - Forgot password triggered');
     this.spinner.show();
     this.scrollTo();
     this.email = forgotForm.value.email;
     this.authService.forgotPassword({email: this.email}).subscribe({
       next: res => {
         if (res) {
-          // this.spinner.hide();
-          // this.overallMessage = '';
-          // this.processName = Process.Reset;
-          setTimeout(() => {
-            this.spinner.hide();
-            this.overallMessage = '';
-            this.activeProcessName = Process.Reset;
-          }, 3500);
+          console.log('Login - Forgot password succeed');
+          this.spinner.hide();
+          this.overallMessage = '';
+          this.activeProcessName = Process.Reset;
         }
         else {
-          // this.spinner.hide();
-          // this.overallMessage = 'Email not registered';
-          setTimeout(() => {
-            this.spinner.hide();
-            this.overallMessage = 'Email not registered';
-          }, 3500);
+          console.log('Login - Forgot password failed');
+          this.spinner.hide();
+          this.overallMessage = 'Email not registered';
         }
       },
       error: () => {
+        console.log('Login - Forgot password failed - Server error');
         this.spinner.hide();
         this.overallMessage = 'Internal Server Error';
       }
@@ -129,6 +125,7 @@ export class LoginComponent implements AfterViewInit {
   }
 
   changePassword(resetForm : NgForm) {
+    console.log('Login - Change password triggered');
     this.spinner.show();
     this.scrollTo();
     let request = {
@@ -139,25 +136,19 @@ export class LoginComponent implements AfterViewInit {
     this.authService.resetPassword(request).subscribe({
       next: res => {
         if (res) {
-          // this.spinner.hide();
-          // this.partialReset();
-          // this.processName = Process.Login;
-          setTimeout(() => {
-            this.spinner.hide();
-            this.partialReset();
-            this.activeProcessName = Process.Login;
-          }, 3500);
+          console.log('Login - Change password succeed');
+          this.spinner.hide();
+          this.partialReset();
+          this.activeProcessName = Process.Login;
         }
         else {
-          // this.spinner.hide();
-          // this.overallMessage = 'Reset Password Failed';
-          setTimeout(() => {
-            this.spinner.hide();
-            this.overallMessage = 'Reset Password Failed';
-          }, 3500);
+          console.log('Login - Change password failed');
+          this.spinner.hide();
+          this.overallMessage = 'Reset Password Failed';
         }
       },
       error: () => {
+        console.log('Login - Change password failed - Server error');
         this.spinner.hide();
         this.overallMessage = 'Internal Server Error';
       }

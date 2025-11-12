@@ -7,7 +7,12 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class PrivacyPolicyComponent implements AfterViewInit {
 
+  constructor() {
+    console.log('Privacy policy - Initiated');
+  }
+
   ngAfterViewInit() {
+    console.log('Privacy policy - Scroll to target section');
     this.scrollTo();
   }
 
