@@ -12,3 +12,24 @@
   min-height: 100vh;
   height: auto;
 }
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background-color: var(--hover-bg-color-secondary);
+}
+
+.sidebar li.active {
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--pulse-color);
+  color: var(--pulse-color);
+}

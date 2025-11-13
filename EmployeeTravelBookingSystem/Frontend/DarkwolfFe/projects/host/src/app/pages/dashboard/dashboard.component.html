@@ -1,5 +1,13 @@
 <div class="dashboard">
-  <app-nav id="nav-target" [username]="username" [email]="email"></app-nav>
+  <app-nav id="nav-target" [username]="username" [email]="email">
+    <div class="sidebar">
+      <ul>
+        <li routerLink="/dashboard/details" routerLinkActive="active">Dashboard</li>
+        <li routerLink="/dashboard/reports" routerLinkActive="active">Reports</li>
+        <li routerLink="/dashboard/settings" routerLinkActive="active">Settings</li>
+      </ul>
+    </div>
+  </app-nav>
   <div class="dashboard-content" (click)="closeMenus()">
     <router-outlet></router-outlet>
   </div>

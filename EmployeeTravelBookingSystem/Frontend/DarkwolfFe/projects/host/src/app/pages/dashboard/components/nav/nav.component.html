@@ -25,12 +25,8 @@
   </div>
 
   <!-- Sidebar -->
-  <div class="sidebar" [class.open]="isSidebarOpen">
-    <ul>
-      <li routerLink="/dashboard/details" routerLinkActive="active">Dashboard</li>
-      <li routerLink="/dashboard/reports" routerLinkActive="active">Reports</li>
-      <li routerLink="/dashboard/settings" routerLinkActive="active">Settings</li>
-    </ul>
+  <div class="side-navbar" [class.open]="isSidebarOpen">
+    <ng-content></ng-content>
   </div>
 </nav>
 
