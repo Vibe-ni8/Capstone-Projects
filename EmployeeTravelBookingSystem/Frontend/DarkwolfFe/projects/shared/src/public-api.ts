@@ -20,3 +20,6 @@ export * from './lib/services/toaster.service';
 
 // interceptors
 export * from './lib/interceptors/auth.interceptor';
+
+// guards
+export * from './lib/guards/auth.guard';

@@ -9,7 +9,7 @@ import { PrivacyPolicyComponent } from '@host/app/pages/home/components/privacy-
 import { TermsOfServiceComponent } from '@host/app/pages/home/components/terms-of-service/terms-of-service.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch:'full'},
+  {path:'', redirectTo:'dashboard', pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'home', component:HomeComponent, 
     children:[
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {path:'dashboard', loadChildren:()=>import('@host/app/pages/page.module').then(pm => pm.PageModule)},
   {path:'un-authorized', component:UnAuthorizedComponent},
-  {path:'**', component:PageNotFoundComponent},
+  {path:'**', component:PageNotFoundComponent}
 ];
 
 @NgModule({

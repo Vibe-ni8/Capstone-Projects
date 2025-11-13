@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { TokenService } from 'shared';
+import { ToasterService, TokenService } from 'shared';
 
 @Component({
   selector: 'app-nav',
@@ -9,7 +9,7 @@ import { TokenService } from 'shared';
 })
 export class NavComponent {
 
-  constructor(private tokenService:TokenService, private router: Router) {
+  constructor(private tokenService:TokenService, private router: Router, private toasterService:ToasterService) {
     console.log('Dashboared_Navbar - Initiated');
   }
 
@@ -60,6 +60,7 @@ export class NavComponent {
   logout() {
     console.log('Dashboared_Navbar - Logout triggered');
     this.tokenService.clearToken();
+    this.toasterService.showWarn('Logged Out');
     this.router.navigate(['/home/login'])
   }
 

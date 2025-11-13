@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailsComponent } from './dashboard/components/details/details.component';
-import { AuthGuard } from 'projects/shared/src/lib/guards/auth.guard';
+import { AuthGuard } from 'shared';
 import { SettingsComponent } from './dashboard/components/settings/settings.component';
+import { loadRemoteModule } from '@angular-architects/module-federation';
 
 const routes: Routes = [
   {
@@ -16,7 +17,15 @@ const routes: Routes = [
       {path:'details', component:DetailsComponent},
       {path:'reports', component:DetailsComponent},
       {path:'settings', component:SettingsComponent},
-      // {path:'profile', component:ProfileComponent}
+      {
+        path: 'employeetravelbooking',
+        loadChildren: () =>
+          loadRemoteModule({
+            type: 'module',
+            remoteEntry: 'http://localhost:4201/remoteEntry.js',
+            exposedModule: './Pages',
+          }).then(m => m.PageModule),
+        },
   ]},
 ];
 

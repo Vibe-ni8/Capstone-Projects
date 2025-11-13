@@ -16,7 +16,9 @@ import { PageModule } from '@host/app/pages/page.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent, PrivacyPolicyComponent, TermsOfServiceComponent
+    LoginComponent, 
+    PrivacyPolicyComponent, 
+    TermsOfServiceComponent
   ],
   imports: [
     BrowserModule,
