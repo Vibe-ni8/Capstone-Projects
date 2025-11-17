@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj": {}
+    "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj": {
+    "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj",
+        "projectUniqueName": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj",
         "projectName": "Darkwolf.Shared.Persistence",
-        "projectPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj",
+        "projectPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\Darkwolf.Shared.Persistence.csproj",
         "packagesPath": "C:\\Users\\vigne\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\obj\\",
+        "outputPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

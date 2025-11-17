@@ -635,11 +635,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Middleware\\Darkwolf.Shared.Middleware.csproj",
+      "projectUniqueName": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Middleware\\Darkwolf.Shared.Middleware.csproj",
       "projectName": "Darkwolf.Shared.Middleware",
-      "projectPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Middleware\\Darkwolf.Shared.Middleware.csproj",
+      "projectPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Middleware\\Darkwolf.Shared.Middleware.csproj",
       "packagesPath": "C:\\Users\\vigne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Middleware\\obj\\",
+      "outputPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Middleware\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

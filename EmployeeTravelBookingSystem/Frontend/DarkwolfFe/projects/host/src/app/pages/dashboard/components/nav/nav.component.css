@@ -17,6 +17,17 @@
   cursor: pointer;
 }
 
+.nav-left {
+  position: relative;
+}
+
+.nav-mid h1{
+  position: relative;
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
 .nav-right {
   position: relative;
 }

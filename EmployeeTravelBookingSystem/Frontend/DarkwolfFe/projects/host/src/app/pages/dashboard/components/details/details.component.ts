@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class DetailsComponent {
 
   constructor(private router:Router) {
-    console.log('Dashboared_Details - Initiated');
+    console.log('Dashboard_Details - Initiated');
   }
 
   modules = [
@@ -24,7 +24,8 @@ export class DetailsComponent {
     console.log('Navigating to:', item.title);
     switch (item.title)
     {
-      case 'Travel Booking': this.router.navigate(['/dashboard/employeetravelbooking']); break;
+      case 'Travel Booking': this.router.navigate(['/employeetravelbooking']); break;
+      case 'Reports': this.router.navigate(['/dashboard/reports']); break;
       case 'Settings': this.router.navigate(['/dashboard/settings']); break;
     }
   }

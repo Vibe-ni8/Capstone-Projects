@@ -158,11 +158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Logging\\Darkwolf.Shared.Logging.csproj",
+      "projectUniqueName": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Logging\\Darkwolf.Shared.Logging.csproj",
       "projectName": "Darkwolf.Shared.Logging",
-      "projectPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Logging\\Darkwolf.Shared.Logging.csproj",
+      "projectPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Logging\\Darkwolf.Shared.Logging.csproj",
       "packagesPath": "C:\\Users\\vigne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Logging\\obj\\",
+      "outputPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Logging\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

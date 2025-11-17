@@ -3235,11 +3235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj",
+      "projectUniqueName": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj",
       "projectName": "Darkwolf.AuthService.Solution",
-      "projectPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj",
+      "projectPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution.csproj",
       "packagesPath": "C:\\Users\\vigne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\obj\\",
+      "outputPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.AuthService.Solution\\Darkwolf.AuthService.Solution\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3255,7 +3255,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Publish": {},
+        "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Publish": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

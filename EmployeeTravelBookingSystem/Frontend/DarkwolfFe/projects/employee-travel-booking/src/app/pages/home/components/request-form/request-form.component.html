@@ -1,0 +1,25 @@
+<h3>New Travel Request</h3>
+
+<form #travelForm="ngForm" (ngSubmit)="submitRequest()">
+  <div class="form-row">
+    <label>Destination</label>
+    <input type="text" name="destination" [(ngModel)]="request.destination" required>
+  </div>
+
+  <div class="form-row">
+    <label>Start Date</label>
+    <input type="date" name="startDate" [(ngModel)]="request.startDate" required>
+  </div>
+
+  <div class="form-row">
+    <label>End Date</label>
+    <input type="date" name="endDate" [(ngModel)]="request.endDate" required>
+  </div>
+
+  <div class="form-row">
+    <label>Purpose</label>
+    <textarea name="purpose" [(ngModel)]="request.purpose" required></textarea>
+  </div>
+
+  <button type="submit" [disabled]="!travelForm.valid">Submit Request</button>
+</form>

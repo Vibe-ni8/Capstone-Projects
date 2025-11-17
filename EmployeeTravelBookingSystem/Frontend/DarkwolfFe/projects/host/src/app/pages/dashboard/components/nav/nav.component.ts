@@ -10,11 +10,12 @@ import { ToasterService, TokenService } from 'shared';
 export class NavComponent {
 
   constructor(private tokenService:TokenService, private router: Router, private toasterService:ToasterService) {
-    console.log('Dashboared_Navbar - Initiated');
+    console.log('Dashboard_Navbar - Initiated');
   }
 
   @Input() username: string = '';
   @Input() email: string = '';
+  @Input() tabName: string | null = null;
 
   isSidebarOpen:boolean = false;
   isProfileMenuOpen:boolean = false;
@@ -58,7 +59,7 @@ export class NavComponent {
   }
 
   logout() {
-    console.log('Dashboared_Navbar - Logout triggered');
+    console.log('Dashboard_Navbar - Logout triggered');
     this.tokenService.clearToken();
     this.toasterService.showWarn('Logged Out');
     this.router.navigate(['/home/login'])
