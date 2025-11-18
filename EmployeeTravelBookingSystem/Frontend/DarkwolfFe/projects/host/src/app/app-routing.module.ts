@@ -24,22 +24,25 @@ const routes: Routes = [
   {
     path:'dashboard', 
     canActivate:[AuthGuard],
-    loadChildren:()=>import('@host/app/pages/page.module').then(pm => pm.PageModule)},
+    component:DashboardComponent,
+    canActivateChild:[AuthGuard],
+    loadChildren:()=>import('@host/app/pages/page.module').then(pm => pm.PageModule)
+  },
   {
     path:'employeetravelbooking', 
     canActivate:[AuthGuard],
-    component:DashboardComponent,  
+    component:DashboardComponent, 
     children:[
       {
         path: '',
+        data:{tab:'Employee Travel Booking'},
         canActivateChild:[AuthGuard],
         loadChildren: () =>
           loadRemoteModule({
             type: 'module',
             remoteEntry: 'http://localhost:4201/remoteEntry.js',
             exposedModule: './Pages',
-          }).then(m => m.PageModule),
-        data:{tab:'Employee Travel Booking'}
+          }).then(m => m.PageModule)
       },
     ]
   },

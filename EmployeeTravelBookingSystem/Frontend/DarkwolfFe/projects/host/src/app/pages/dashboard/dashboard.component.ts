@@ -29,7 +29,7 @@ export class DashboardComponent {
         let child = this.route.firstChild;
 
         child?.data.subscribe(data => {
-          console.log("Dashboard - Active Child Route Data:", data);
+          console.log("Dashboard - Active Child Route Tab:", data['tab']);
           this.currentTab = data['tab'];
         });
       });
