@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class DetailsComponent {
 
   constructor(private router:Router) {
-    console.log('Dashboared_Details - Initiated');
+    console.log('Dashboard_Details - Initiated');
+    this.scrollTo();
   }
 
   modules = [
@@ -24,7 +25,18 @@ export class DetailsComponent {
     console.log('Navigating to:', item.title);
     switch (item.title)
     {
-      case 'Settings': this.router.navigate(['/dashboard/settings']); break;
+      case 'Travel Booking': this.router.navigate(['/employeetravelbooking']); break;
+      case 'Self Service': this.router.navigate(['/dashboard/self-service']); this.scrollTo(); break;
+      case 'Reports': this.router.navigate(['/dashboard/reports']); this.scrollTo(); break;
+      case 'Notifications': this.router.navigate(['/dashboard/notifications']); this.scrollTo(); break;
+      case 'Settings': this.router.navigate(['/dashboard/settings']); this.scrollTo(); break;
+    }
+  }
+
+  scrollTo() {
+    const el = document.getElementById('nav-target');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
     }
   }
   

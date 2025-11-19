@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
 export class ProfileComponent {
 
   constructor(private spinner:LoaderService, private userService:UserService, private toasterService:ToasterService) {
-    console.log('Dashboared_Profile - Initiated');
+    console.log('Dashboard_Profile - Initiated');
   }
 
   ngOnInit() {
@@ -18,13 +18,13 @@ export class ProfileComponent {
     this.userService.getCurrentUserProfile().subscribe({
       next: res => {
         if (res) {
-          console.log('Dashboared_Profile - Data fetch succeed');
+          console.log('Dashboard_Profile - Data fetch succeed');
           this.spinner.hideMini();
           this.user = res;
           this.user.profileImage= 'assets/logos/profile.jpg';
         }
         else {
-          console.log('Dashboared - Data fetch failed - User not found');
+          console.log('Dashboard - Data fetch failed - User not found');
           this.spinner.hideMini();
           this.toasterService.showError('User not Found - Log again to avoid fault data');
           this.user = this.defaultUser;
@@ -32,7 +32,7 @@ export class ProfileComponent {
         }
       },
       error: () => {
-        console.log('Dashboared - Data fetch failed - Server error');
+        console.log('Dashboard - Data fetch failed - Server error');
         this.spinner.hideMini();
         this.toasterService.showError('Server Error - Log again to avoid fault data');
         this.user = this.defaultUser;
@@ -79,7 +79,7 @@ export class ProfileComponent {
   };
 
   setTab(tab: string) {
-    console.log('Dashboared_Profile - Set tab to :', tab);
+    console.log('Dashboard_Profile - Set tab to :', tab);
     this.activeTab = tab;
   }
 

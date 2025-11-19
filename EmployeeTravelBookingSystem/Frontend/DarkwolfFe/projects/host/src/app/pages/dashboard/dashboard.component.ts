@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { NavComponent } from './components/nav/nav.component';
 import { UserService } from './services/user.service';
 import { LoaderService, ToasterService } from 'shared';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,12 +12,28 @@ import { LoaderService, ToasterService } from 'shared';
 })
 export class DashboardComponent {
 
-  constructor(private userService:UserService, private spinner:LoaderService, private toasterService:ToasterService) {
-    console.log('Dashboared - Initiated');
+  constructor(private userService:UserService, private spinner:LoaderService, 
+    private toasterService:ToasterService, private router: Router, private route: ActivatedRoute) {
+      console.log('Dashboared - Initiated');
+      this.SetupPage();
   }
 
   username:string = 'Loading...';
   email:string = 'Loading...';
+  currentTab: string | null = null;
+
+  SetupPage() {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        let child = this.route.firstChild;
+
+        child?.data.subscribe(data => {
+          console.log("Dashboard - Active Child Route Tab:", data['tab']);
+          this.currentTab = data['tab'];
+        });
+      });
+  }
   
   ngOnInit() {
     this.spinner.show();

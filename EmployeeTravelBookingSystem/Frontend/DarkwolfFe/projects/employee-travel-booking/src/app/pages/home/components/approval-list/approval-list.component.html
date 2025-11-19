@@ -1,0 +1,19 @@
+<h3>Pending Approvals</h3>
+
+<div *ngIf="requests.length; else empty">
+  <div *ngFor="let req of requests" class="card">
+    <div>
+      <strong>{{ req.destination }}</strong> <br>
+      {{ req.startDate }} → {{ req.endDate }} <br>
+      <small>{{ req.purpose }}</small>
+    </div>
+    <div class="actions">
+      <button (click)="approve(req)">Approve</button>
+      <button class="reject" (click)="reject(req)">Reject</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #empty>
+  <p>No requests pending approval.</p>
+</ng-template>

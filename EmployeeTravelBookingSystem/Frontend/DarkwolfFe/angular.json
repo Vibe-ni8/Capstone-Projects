@@ -1,134 +1,242 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
-    "host": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "projects/host",
-      "sourceRoot": "projects/host/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/host",
-            "index": "projects/host/src/index.html",
-            "main": "projects/host/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "projects/host/tsconfig.app.json",
-            "assets": [
-              "projects/host/src/assets"
-            ],
-            "styles": [
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "projects/host/src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "options": {
-            "port": 4200
-          },
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "host:build:production"
-            },
-            "development": {
-              "browserTarget": "host:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "host:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "projects/host/tsconfig.spec.json",
-            "assets": [
-              "projects/host/src/favicon.ico",
-              "projects/host/src/assets"
-            ],
-            "styles": [
-              "projects/host/src/styles.css"
-            ],
-            "scripts": []
-          }
-        }
-      }
-    },
-    "shared": {
-      "projectType": "library",
-      "root": "projects/shared",
-      "sourceRoot": "projects/shared/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/shared/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/shared/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/shared/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/shared/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
-    }
-  }
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"host": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/host",
+			"sourceRoot": "projects/host/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/host",
+						"index": "projects/host/src/index.html",
+						"main": "projects/host/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/host/tsconfig.app.json",
+						"assets": [
+							"projects/host/src/assets"
+						],
+						"styles": [
+							"node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+							"projects/host/src/styles.css"
+						],
+						"scripts": [],
+						"commonChunk": false,
+						"extraWebpackConfig": "projects/host/webpack.config.js"
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/host/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"options": {
+						"port": 4200,
+						"publicHost": "http://localhost:4200",
+						"extraWebpackConfig": "projects/host/webpack.config.js"
+					},
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "host:build:production",
+							"extraWebpackConfig": "projects/host/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "host:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "host:build",
+						"extraWebpackConfig": "projects/host/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/host/tsconfig.spec.json",
+						"assets": [
+							"projects/host/src/favicon.ico",
+							"projects/host/src/assets"
+						],
+						"styles": [
+							"projects/host/src/styles.css"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"shared": {
+			"projectType": "library",
+			"root": "projects/shared",
+			"sourceRoot": "projects/shared/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/shared/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/shared/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/shared/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"tsConfig": "projects/shared/tsconfig.spec.json",
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						]
+					}
+				}
+			}
+		},
+		"employeeTravelBooking": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/employee-travel-booking",
+			"sourceRoot": "projects/employee-travel-booking/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/employee-travel-booking",
+						"index": "projects/employee-travel-booking/src/index.html",
+						"main": "projects/employee-travel-booking/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/employee-travel-booking/tsconfig.app.json",
+						"assets": [
+							"projects/employee-travel-booking/src/favicon.ico",
+							"projects/employee-travel-booking/src/assets"
+						],
+						"styles": [
+							"projects/employee-travel-booking/src/styles.css"
+						],
+						"scripts": [],
+						"commonChunk": false,
+						"extraWebpackConfig": "projects/employee-travel-booking/webpack.config.js"
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/employee-travel-booking/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"options": {
+						"port": 4201,
+						"publicHost": "http://localhost:4201",
+						"extraWebpackConfig": "projects/employee-travel-booking/webpack.config.js"
+					},
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "employeeTravelBooking:build:production",
+							"extraWebpackConfig": "projects/employee-travel-booking/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "employeeTravelBooking:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "employeeTravelBooking:build",
+						"extraWebpackConfig": "projects/employee-travel-booking/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/employee-travel-booking/tsconfig.spec.json",
+						"assets": [
+							"projects/employee-travel-booking/src/favicon.ico",
+							"projects/employee-travel-booking/src/assets"
+						],
+						"styles": [
+							"projects/employee-travel-booking/src/styles.css"
+						],
+						"scripts": []
+					}
+				}
+			}
+		}
+	}
 }

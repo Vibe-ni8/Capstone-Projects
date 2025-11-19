@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ThemeService {
 
   private themeSubject = new BehaviorSubject<'light' | 'dark'>('light');
-  theme$ = this.themeSubject.asObservable();
+  theme = this.themeSubject.asObservable();
 
   private mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
   private mediaListener?: (event: MediaQueryListEvent) => void;
