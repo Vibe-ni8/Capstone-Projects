@@ -26,10 +26,10 @@ public class AuthDbContext : DbContext
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
             b.Property(e => e.EmployeeName).HasColumnName("emp_name")
-            .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
+            .HasColumnType("Varchar(50)").HasMaxLength(30).IsRequired();
 
             b.Property(e => e.EmployeeEmail).HasColumnName("emp_email")
-            .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
+            .HasColumnType("Varchar(50)").HasMaxLength(30).IsRequired();
 
             b.Property(e => e.EmployeePassword).HasColumnName("emp_password")
             .HasColumnType("Varchar(100)").HasMaxLength(100).IsRequired();
@@ -62,7 +62,7 @@ public class AuthDbContext : DbContext
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
             b.Property(e => e.RoleName).HasColumnName("role_name")
-            .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
+            .HasColumnType("Varchar(50)").HasMaxLength(30).IsRequired();
         });
 
         modelBuilder.Entity<EmployeeDetails>(b =>
