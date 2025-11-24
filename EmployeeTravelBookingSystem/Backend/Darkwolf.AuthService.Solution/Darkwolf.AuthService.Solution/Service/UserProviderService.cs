@@ -50,6 +50,36 @@ public class UserProviderService
         return role;
     }
 
+    public Task<Department?> CurrentUserDepartment => GetCurrentUserDepartment();
+
+    private async Task<Department?> GetCurrentUserDepartment()
+    {
+        _logger.LogInfo(LogMessage.StartMethod, nameof(GetCurrentUserDepartment));
+
+        var userId = _http.HttpContext?.Items[Keys.UserId]?.ToString() ?? throw new InvalidOperationException(ExceptionMessage.UserIdNotSetOnMiddleware);
+
+        var department = await _employeeRepository.FindDepartmentByIdAsync(userId);
+
+        _logger.LogInfo(LogMessage.EndMethod, nameof(GetCurrentUserDepartment));
+
+        return department;
+    }
+
+    public Task<ServiceLine?> CurrentUserServiceLine => GetCurrentUserServiceLine();
+
+    private async Task<ServiceLine?> GetCurrentUserServiceLine()
+    {
+        _logger.LogInfo(LogMessage.StartMethod, nameof(GetCurrentUserServiceLine));
+
+        var userId = _http.HttpContext?.Items[Keys.UserId]?.ToString() ?? throw new InvalidOperationException(ExceptionMessage.UserIdNotSetOnMiddleware);
+
+        var serviceLine = await _employeeRepository.FindServiceLineByIdAsync(userId);
+
+        _logger.LogInfo(LogMessage.EndMethod, nameof(GetCurrentUserServiceLine));
+
+        return serviceLine;
+    }
+
     public Task<Location?> CurrentUserLocation => GetCurrentUserLocation();
 
     private async Task<Location?> GetCurrentUserLocation()
@@ -80,6 +110,40 @@ public class UserProviderService
         _logger.LogInfo(LogMessage.EndMethod, nameof(GetCurrentUserReportsTo));
 
         return reportingManagerwithRole;
+    }
+
+    public Task<EmployeeWithRole?> CurrentUserHomeManager => GetCurrentUserHomeManager();
+
+    private async Task<EmployeeWithRole?> GetCurrentUserHomeManager()
+    {
+        _logger.LogInfo(LogMessage.StartMethod, nameof(GetCurrentUserHomeManager));
+
+        var userId = _http.HttpContext?.Items[Keys.UserId]?.ToString() ?? throw new InvalidOperationException(ExceptionMessage.UserIdNotSetOnMiddleware);
+
+        var homeManager = await _employeeRepository.FindUserHomeManagerAsync(userId);
+
+        var homeManagerwithRole = homeManager is not null ? await _employeeRepository.GetWithRoleAsync(homeManager) : null;
+
+        _logger.LogInfo(LogMessage.EndMethod, nameof(GetCurrentUserHomeManager));
+
+        return homeManagerwithRole;
+    }
+
+    public Task<EmployeeWithRole?> CurrentUserWorkManager => GetCurrentUserWorkManager();
+
+    private async Task<EmployeeWithRole?> GetCurrentUserWorkManager()
+    {
+        _logger.LogInfo(LogMessage.StartMethod, nameof(GetCurrentUserWorkManager));
+
+        var userId = _http.HttpContext?.Items[Keys.UserId]?.ToString() ?? throw new InvalidOperationException(ExceptionMessage.UserIdNotSetOnMiddleware);
+
+        var WorkManager = await _employeeRepository.FindUserWorkManagerAsync(userId);
+
+        var WorkManagerwithRole = WorkManager is not null ? await _employeeRepository.GetWithRoleAsync(WorkManager) : null;
+
+        _logger.LogInfo(LogMessage.EndMethod, nameof(GetCurrentUserWorkManager));
+
+        return WorkManagerwithRole;
     }
 
     public Task<List<EmployeeWithRole>> UsersReportsToCurrentUser => GetUsersReportsToCurrentUser();

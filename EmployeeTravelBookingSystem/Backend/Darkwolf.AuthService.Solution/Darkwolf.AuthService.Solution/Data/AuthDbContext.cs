@@ -15,6 +15,10 @@ public class AuthDbContext : DbContext
 
     public DbSet<Location> Locations => Set<Location>();
 
+    public DbSet<Department> Departments => Set<Department>();
+
+    public DbSet<ServiceLine> ServiceLines => Set<ServiceLine>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Employee>(b =>
@@ -26,10 +30,10 @@ public class AuthDbContext : DbContext
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
             b.Property(e => e.EmployeeName).HasColumnName("emp_name")
-            .HasColumnType("Varchar(50)").HasMaxLength(30).IsRequired();
+            .HasColumnType("Varchar(50)").HasMaxLength(50).IsRequired();
 
             b.Property(e => e.EmployeeEmail).HasColumnName("emp_email")
-            .HasColumnType("Varchar(50)").HasMaxLength(30).IsRequired();
+            .HasColumnType("Varchar(50)").HasMaxLength(50).IsRequired();
 
             b.Property(e => e.EmployeePassword).HasColumnName("emp_password")
             .HasColumnType("Varchar(100)").HasMaxLength(100).IsRequired();
@@ -37,7 +41,7 @@ public class AuthDbContext : DbContext
             b.Property(e => e.RoleId).HasColumnName("role_id")
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
-            b.Property(e => e.DeptId).HasColumnName("dept_id")
+            b.Property(e => e.DepartmentId).HasColumnName("dept_id")
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
             b.Property(e => e.ResetToken).HasColumnName("reset_token")
@@ -62,15 +66,16 @@ public class AuthDbContext : DbContext
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
             b.Property(e => e.RoleName).HasColumnName("role_name")
-            .HasColumnType("Varchar(50)").HasMaxLength(30).IsRequired();
+            .HasColumnType("Varchar(50)").HasMaxLength(50).IsRequired();
+            b.HasIndex(e => e.RoleName).IsUnique();
         });
 
         modelBuilder.Entity<EmployeeDetails>(b =>
         {
             b.ToTable("emp_details");
-            b.HasKey(e => e.EmpId);
+            b.HasKey(e => e.EmployeeId);
 
-            b.Property(e => e.EmpId).HasColumnName("emp_id")
+            b.Property(e => e.EmployeeId).HasColumnName("emp_id")
             .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
 
             b.Property(e => e.ReportingManagerId).HasColumnName("reporting_mgr_id")
@@ -94,6 +99,35 @@ public class AuthDbContext : DbContext
             b.Property(e => e.LocationShortName).HasColumnName("loc_short_name")
             .HasColumnType("Varchar(30)").HasMaxLength(30).IsRequired();
             b.HasIndex(e => e.LocationShortName).IsUnique();
+        });
+
+        modelBuilder.Entity<Department>(b =>
+        {
+            b.ToTable("department");
+            b.HasKey(e => e.DepartmentId);
+
+            b.Property(e => e.DepartmentId).HasColumnName("dept_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
+
+            b.Property(e => e.DepartmentName).HasColumnName("dept_name")
+            .HasColumnType("Varchar(50)").HasMaxLength(50).IsRequired();
+            b.HasIndex(b => b.DepartmentName).IsUnique();
+
+            b.Property(e => e.ServiceLineId).HasColumnName("sl_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
+        });
+
+        modelBuilder.Entity<ServiceLine>(b =>
+        {
+            b.ToTable("service_line");
+            b.HasKey(e => e.ServiceLineId);
+
+            b.Property(e => e.ServiceLineId).HasColumnName("sl_id")
+            .HasColumnType("Varchar(10)").HasMaxLength(10).IsRequired();
+
+            b.Property(e => e.ServiceLineName).HasColumnName("sl_name")
+            .HasColumnType("Varchar(50)").HasMaxLength(50).IsRequired();
+            b.HasIndex(b => b.ServiceLineName).IsUnique();
         });
     }
 }

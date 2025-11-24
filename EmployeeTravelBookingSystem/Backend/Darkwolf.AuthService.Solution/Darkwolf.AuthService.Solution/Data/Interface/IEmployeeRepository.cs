@@ -9,8 +9,12 @@ public interface IEmployeeRepository
     Task<Employee?> FindByEmailAsync(string email);
     Task<Role?> FindRoleByIdAsync(string employeeId);
     Task<Role?> FindRoleAsync(Employee employee);
+    Task<Department?> FindDepartmentByIdAsync(string employeeId);
+    Task<ServiceLine?> FindServiceLineByIdAsync(string employeeId);
     Task<Location?> FindLocationByIdAsync(string employeeId);
     Task<Employee?> FindUserReportsToAsync(string employeeId);
+    Task<Employee?> FindUserHomeManagerAsync(string employeeId);
+    Task<Employee?> FindUserWorkManagerAsync(string employeeId);
     Task<List<Employee>> FindUsersReportsToHimAsync(string employeeId);
     Task<EmployeeWithRole?> GetWithRoleAsync(Employee employee);
     Task<List<EmployeeWithRole>> GetWithRoleAsync(List<Employee> employees);
