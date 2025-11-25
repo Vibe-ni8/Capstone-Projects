@@ -1,0 +1,17 @@
+<div class="app-header"><div class="hamburger">☰</div><div class="title">My Travel Requests</div><div class="profile">Server Error</div></div>
+<div class="app-container">
+<div class="page-card">
+<h2>History</h2>
+<table style="width:100%">
+<thead><tr><th>ID</th><th>Destination</th><th>Dates</th><th>Status</th></tr></thead>
+<tbody>
+<tr *ngFor="let i of items">
+<td>{{i.id}}</td>
+<td>{{i.destination}}</td>
+<td>{{i.startDate}} - {{i.endDate }}</td>
+<td>{{i.status}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

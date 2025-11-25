@@ -46,6 +46,7 @@ export class ProfileComponent {
   user: any = {
     name: 'Loading...',
     role: 'Loading...',
+    department: 'Loading...',
     profileImage: 'assets/logos/profile.jpg',
     contact: {
       email: 'Loading...',
@@ -53,28 +54,30 @@ export class ProfileComponent {
       location: 'Loading...'
     },
     organization: {
-      reportingTo: {
-        name: 'Loading...',
-        role: 'Loading...'
-      },
+      reportingTo: { name: 'Loading...', email: 'Loading...', role: 'Loading...' },
       reportsToHim: [
-        { name: 'Loading...', role: 'Loading...' }
-      ]
+        { name: 'Loading...', email: 'Loading...', role: 'Loading...' }
+      ],
+      homeManager: { name: 'Loading...', email: 'Loading...', role: 'Loading...' },
+      workManager: { name: 'Loading...', email: 'Loading...', role: 'Loading...' }
     }
   };
 
   private defaultUser = {
-    name: '',
-    role: '',
+    name: null,
+    role: null,
+    department: null,
     profileImage: 'assets/logos/profile.jpg',
     contact: {
-      email: '',
-      phone: '',
-      location: ''
+      email: null,
+      phone: null,
+      location: null
     },
     organization: {
       reportingTo: null,
-      reportsToHim: []
+      reportsToHim: [],
+      homeManager: null,
+      workManager: null
     }
   };
 

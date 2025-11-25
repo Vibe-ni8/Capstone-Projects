@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { PageRoutingModule } from './page-routing.module';
-import { HomeComponent } from './home/home.component';
-import { RequestFormComponent } from './home/components/request-form/request-form.component';
-import { ApprovalListComponent } from './home/components/approval-list/approval-list.component';
-import { HistoryComponent } from './home/components/history/history.component';
-import { FormsModule } from '@angular/forms';
+
+import { TravelDashboardComponent } from './travel-dashboard/travel-dashboard.component';
+import { NewRequestComponent } from './new-request/new-request.component';
+import { ApprovalsComponent } from './approvals/approvals.component';
+import { TravelDeskComponent } from './travel-desk/travel-desk.component';
+import { BookingDetailsComponent } from './booking-details/booking-details.component';
+import { HistoryComponent } from './history/history.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    RequestFormComponent,
-    ApprovalListComponent,
-    HistoryComponent
+    TravelDashboardComponent, NewRequestComponent, ApprovalsComponent, 
+    TravelDeskComponent, BookingDetailsComponent, HistoryComponent
   ],
   imports: [
     CommonModule,

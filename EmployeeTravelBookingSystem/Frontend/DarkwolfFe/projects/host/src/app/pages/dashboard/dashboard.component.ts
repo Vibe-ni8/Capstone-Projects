@@ -39,7 +39,7 @@ export class DashboardComponent {
     this.spinner.show();
     this.userService.getCurrentUser().subscribe({
       next: res => {
-        if (res) {
+        if (typeof res !== 'boolean') {
           console.log('Dashboared - Data fetch succeed');
           this.spinner.hide();
           this.username = res.name;

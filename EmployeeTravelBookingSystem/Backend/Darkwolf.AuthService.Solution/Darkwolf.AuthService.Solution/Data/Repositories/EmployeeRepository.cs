@@ -105,7 +105,7 @@ public class EmployeeRepository : IEmployeeRepository
             .Where(r => employee.RoleId.Equals(r.RoleId))
             .Select(r => new EmployeeWithRole()
             {
-                EmpId = employee.EmployeeId,
+                EmployeeId = employee.EmployeeId,
                 Name = employee.EmployeeName,
                 Email = employee.EmployeeEmail,
                 RoleId = employee.RoleId,
@@ -120,7 +120,7 @@ public class EmployeeRepository : IEmployeeRepository
             .Join(employees, r => r.RoleId, e => e.RoleId, (r, e) => new {e, r})
             .Select(joined => new EmployeeWithRole()
             {
-                EmpId = joined.e.EmployeeId,
+                EmployeeId = joined.e.EmployeeId,
                 Name = joined.e.EmployeeName,
                 Email = joined.e.EmployeeEmail,
                 RoleId = joined.e.RoleId,

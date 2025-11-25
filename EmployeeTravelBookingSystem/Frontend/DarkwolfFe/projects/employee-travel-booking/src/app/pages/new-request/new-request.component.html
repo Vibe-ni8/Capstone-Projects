@@ -1,0 +1,15 @@
+<div class="app-header"><div class="hamburger">☰</div><div class="title">Employee Travel Booking</div><div class="profile">Server Error</div></div>
+<div class="app-container">
+<div class="tabs"><div class="tab active">New Request</div><div class="tab">Approvals</div><div class="tab">History</div></div>
+<div class="page-card">
+<h2>New Travel Request</h2>
+<div class="form-row"><label>Destination</label><input [(ngModel)]="model.destination" placeholder="City or location"></div>
+<div class="form-row"><label>Start Date</label><input type="date" [(ngModel)]="model.startDate"></div>
+<div class="form-row"><label>End Date</label><input type="date" [(ngModel)]="model.endDate"></div>
+<div class="form-row"><label>Purpose</label><textarea [(ngModel)]="model.purpose"></textarea></div>
+<div class="form-row"><label>Travel Type</label><select [(ngModel)]="model.travelType"><option>Domestic</option><option>International</option></select></div>
+<div class="form-row"><label>Mode</label><select [(ngModel)]="model.mode"><option>Flight</option><option>Train</option><option>Bus</option><option>Cab</option></select></div>
+<div class="form-row"><label>Accommodation</label><select [(ngModel)]="model.accommodationRequired"><option [ngValue]="false">No</option><option [ngValue]="true">Yes</option></select></div>
+<div style="margin-top:12px"><button class="button-primary" (click)="submit()">Submit Request</button></div>
+</div>
+</div>

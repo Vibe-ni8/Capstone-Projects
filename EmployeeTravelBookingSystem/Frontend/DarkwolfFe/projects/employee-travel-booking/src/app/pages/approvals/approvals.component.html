@@ -1,0 +1,11 @@
+<div class="app-header"><div class="hamburger">☰</div><div class="title">Approvals</div><div class="profile">Server Error</div></div>
+<div class="app-container">
+<div class="page-card">
+<h2>Pending Approvals</h2>
+<div *ngIf="pending.length===0">No pending requests</div>
+<div *ngFor="let p of pending" style="border-bottom:1px solid var(--border-color); padding:12px 0">
+<div><strong>{{p.employeeName || p.employeeId}}</strong> — {{p.destination}} ({{p.startDate | date}} - {{p.endDate | date}})</div>
+<div style="margin-top:8px"><button (click)="approve(p)" class="button-primary">Approve</button> <button (click)="reject(p)" style="margin-left:8px">Reject</button></div>
+</div>
+</div>
+</div>

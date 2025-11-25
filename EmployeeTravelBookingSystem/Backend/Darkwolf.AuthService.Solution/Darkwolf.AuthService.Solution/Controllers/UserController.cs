@@ -44,6 +44,7 @@ public class UserController : Controller
             UserId = user.EmployeeId,
             Name = user.EmployeeName,
             Email = user.EmployeeEmail,
+            RoleId = user.RoleId,
             Role = role?.RoleName,
             DepartmentId = user.DepartmentId,
             Phone = user.Phone,
@@ -83,6 +84,7 @@ public class UserController : Controller
         {
             UserId = user.EmployeeId,
             Name = user.EmployeeName,
+            RoleId = user.RoleId,
             Role = role?.RoleName,
             DepartmentId = user.DepartmentId,
             Department = department?.DepartmentName,
