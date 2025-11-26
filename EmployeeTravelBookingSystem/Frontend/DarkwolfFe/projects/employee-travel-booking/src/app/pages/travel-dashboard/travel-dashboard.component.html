@@ -1,33 +1,34 @@
 <div class="app-container">
 
-    <h1 class="dashboard-title">Dashboard</h1>
-
     <div class="card-grid">
 
-    <div class="card" (click)="open('/new')">
-        <div class="icon">✈️</div>
-        <h3>New</h3>
-        <p>New</p>
+        <div class="card" (click)="open('/new')">
+            <div class="icon">📝</div>
+            <h3>New Request</h3>
+            <p>Create a new travel booking request here</p>
+        </div>
+
+        <div class="card" (click)="open('/approvals')">
+            <div class="icon">🗂️</div>
+            <h3>Approvals</h3>
+            <p>Here you can see list of request send to you</p>
+        </div>
+
+        <!-- <div class="card">
+            <div class="icon">✅</div>
+        </div>
+        <div class="card">
+            <div class="icon">✔️</div>
+        </div>
+        <div class="card">
+            <div class="icon">📩</div>
+        </div>
+        <div class="card">
+            <div class="icon">⏳</div>
+        </div> -->
+
     </div>
 
-    <div class="card" (click)="open('/history')">
-        <div class="icon">👥</div>
-        <h3>History</h3>
-        <p>History</p>
-    </div>
-
-    <div class="card" (click)="open('/traveldesk')">
-        <div class="icon">📈</div>
-        <h3>TravelDesk</h3>
-        <p>TravelDesk</p>
-    </div>
-
-    <div class="card" (click)="open('/approvals')">
-        <div class="icon">🔔</div>
-        <h3>Approvals</h3>
-        <p>Approvals</p>
-    </div>
-
-    </div>
+    <app-history></app-history>
 
 </div>

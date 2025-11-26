@@ -25,7 +25,7 @@ export class DetailsComponent {
     console.log('Navigating to:', item.title);
     switch (item.title)
     {
-      case 'Travel Booking': this.router.navigate(['/employeetravelbooking']); break;
+      case 'Travel Booking': this.router.navigate(['/employeeTravelBooking']); break;
       case 'Self Service': this.router.navigate(['/dashboard/self-service']); this.scrollTo(); break;
       case 'Reports': this.router.navigate(['/dashboard/reports']); this.scrollTo(); break;
       case 'Notifications': this.router.navigate(['/dashboard/notifications']); this.scrollTo(); break;

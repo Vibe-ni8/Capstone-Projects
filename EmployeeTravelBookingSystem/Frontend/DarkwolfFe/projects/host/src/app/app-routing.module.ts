@@ -29,13 +29,21 @@ const routes: Routes = [
     loadChildren:()=>import('@host/app/pages/page.module').then(pm => pm.PageModule)
   },
   {
-    path:'employeetravelbooking', 
+    path:'employeeTravelBooking', 
     canActivate:[AuthGuard],
     component:DashboardComponent, 
     children:[
       {
         path: '',
-        data:{tab:'Employee Travel Booking'},
+        data: {
+          tab:'Employee Travel Booking', 
+          sideBarList: [
+            {name:'Dashboard - Sharepoint', link:'/dashboard/details'},
+            {name:'Dashboard - Employee Travel Booking', link:'/employeeTravelBooking'},
+            {name:'Reports', link:'/dashboard/reports'},
+            {name:'Settings', link:'/dashboard/settings'}
+          ]
+        },
         canActivateChild:[AuthGuard],
         loadChildren: () =>
           loadRemoteModule({

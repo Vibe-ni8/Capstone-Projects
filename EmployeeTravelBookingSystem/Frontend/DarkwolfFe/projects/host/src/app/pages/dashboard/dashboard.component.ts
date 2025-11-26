@@ -21,6 +21,7 @@ export class DashboardComponent {
   username:string = 'Loading...';
   email:string = 'Loading...';
   currentTab: string | null = null;
+  sideBarList:Array<{name:string, link:string}> = [];
 
   SetupPage() {
     this.router.events
@@ -31,6 +32,17 @@ export class DashboardComponent {
         child?.data.subscribe(data => {
           console.log("Dashboard - Active Child Route Tab:", data['tab']);
           this.currentTab = data['tab'];
+          if (data['sideBarList'] != null)
+          {
+            this.sideBarList = data['sideBarList'];
+          }
+          else {
+            this.sideBarList =  [
+              {name:'Dashboard', link:'/dashboard/details'},
+              {name:'Reports', link:'/dashboard/reports'},
+              {name:'Settings', link:'/dashboard/settings'}
+            ];
+          }
         });
       });
   }

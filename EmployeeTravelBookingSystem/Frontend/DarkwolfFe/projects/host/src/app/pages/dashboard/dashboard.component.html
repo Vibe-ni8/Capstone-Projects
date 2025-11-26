@@ -2,9 +2,7 @@
   <app-nav id="nav-target" [username]="username" [email]="email" [tabName]="currentTab">
     <div class="sidebar">
       <ul>
-        <li routerLink="/dashboard/details" routerLinkActive="active">Dashboard</li>
-        <li routerLink="/dashboard/reports" routerLinkActive="active">Reports</li>
-        <li routerLink="/dashboard/settings" routerLinkActive="active">Settings</li>
+        <li *ngFor="let i of sideBarList" [routerLink]="i.link" routerLinkActive="active">{{i.name}}</li>
       </ul>
     </div>
   </app-nav>
