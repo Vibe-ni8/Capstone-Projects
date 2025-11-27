@@ -1,15 +1,78 @@
-<div class="app-header"><div class="hamburger">☰</div><div class="title">Employee Travel Booking</div><div class="profile">Server Error</div></div>
 <div class="app-container">
-<div class="tabs"><div class="tab active">New Request</div><div class="tab">Approvals</div><div class="tab">History</div></div>
-<div class="page-card">
-<h2>New Travel Request</h2>
-<div class="form-row"><label>Destination</label><input [(ngModel)]="model.destination" placeholder="City or location"></div>
-<div class="form-row"><label>Start Date</label><input type="date" [(ngModel)]="model.startDate"></div>
-<div class="form-row"><label>End Date</label><input type="date" [(ngModel)]="model.endDate"></div>
-<div class="form-row"><label>Purpose</label><textarea [(ngModel)]="model.purpose"></textarea></div>
-<div class="form-row"><label>Travel Type</label><select [(ngModel)]="model.travelType"><option>Domestic</option><option>International</option></select></div>
-<div class="form-row"><label>Mode</label><select [(ngModel)]="model.mode"><option>Flight</option><option>Train</option><option>Bus</option><option>Cab</option></select></div>
-<div class="form-row"><label>Accommodation</label><select [(ngModel)]="model.accommodationRequired"><option [ngValue]="false">No</option><option [ngValue]="true">Yes</option></select></div>
-<div style="margin-top:12px"><button class="button-primary" (click)="submit()">Submit Request</button></div>
-</div>
+    <div class="page-card">
+
+        <h2>New Travel Request</h2>
+
+        <form #travelRequestForm="ngForm" (ngSubmit)="submit(travelRequestForm)">
+            <div class="form-row">
+                <label>From City</label>
+                <input #fromCity="ngModel" ngModel required name="fromCity" type="text" placeholder="City or location">
+                <ng-container *ngIf="fromCity.invalid && fromCity.touched">
+                    <span *ngIf="fromCity.errors?.['required']" class="form-validation dflex-start">From City is required.</span>
+                </ng-container>
+            </div>
+            <div class="form-row">
+                <label>Destination</label>
+                <input #destination="ngModel" ngModel required name="destination" type="text" placeholder="City or location">
+                <ng-container *ngIf="destination.invalid && destination.touched">
+                    <span *ngIf="destination.errors?.['required']" class="form-validation dflex-start">Destination is required.</span>
+                </ng-container>
+            </div>
+            <div class="form-row">
+                <label>Travel Date</label>
+                <input #travelDate="ngModel" ngModel required name="travelDate" type="date" [min]="nextWeek" (change)="validateDate(travelDate.control)">
+                <ng-container *ngIf="travelDate.invalid && travelDate.touched">
+                    <span *ngIf="travelDate.errors?.['required']" class="form-validation dflex-start">
+                        Travel Date is required.
+                    </span>
+                    <span *ngIf="travelDate.errors?.['min']" class="form-validation dflex-start">
+                        Travel Date must be after next week.
+                    </span>
+                </ng-container>
+            </div>
+            <div class="form-row">
+                <label>Purpose</label>
+                <textarea #purpose="ngModel" ngModel name="purpose"></textarea>
+                <ng-container *ngIf="purpose.invalid && purpose.touched">
+                    <span *ngIf="purpose.errors?.['required']" class="form-validation dflex-start">Purpose is required.</span>
+                </ng-container>
+            </div>
+            <div class="form-row">
+                <label>Travel Type</label>
+                <select #traveltype="ngModel" ngModel required name="traveltype">
+                    <option>Domestic</option>
+                    <option>International</option>
+                </select>
+                <ng-container *ngIf="traveltype.invalid && traveltype.touched">
+                    <span *ngIf="traveltype.errors?.['required']" class="form-validation dflex-start">Travel type is required.</span>
+                </ng-container>
+            </div>
+            <div class="form-row">
+                <label>Mode</label>
+                <select #mode="ngModel" ngModel required name="mode">
+                    <option>Flight</option>
+                    <option>Train</option>
+                    <option>Bus</option>
+                    <option>Cab</option>
+                </select>
+                <ng-container *ngIf="mode.invalid && mode.touched">
+                    <span *ngIf="mode.errors?.['required']" class="form-validation dflex-start">Mode is required.</span>
+                </ng-container>
+            </div>
+            <div class="form-row">
+                <label>Accommodation</label>
+                <select #accommodation="ngModel" ngModel required name="accommodation">
+                    <option [ngValue]="false">No</option>
+                    <option [ngValue]="true">Yes</option>
+                </select>
+                <ng-container *ngIf="accommodation.invalid && accommodation.touched">
+                    <span *ngIf="accommodation.errors?.['required']" class="form-validation dflex-start">Accommodation is required.</span>
+                </ng-container>
+            </div>
+            <div style="margin-top:12px">
+                <button [disabled]="travelRequestForm.invalid" class="button-primary" type="submit">Submit Request</button>
+            </div>
+        </form>
+
+    </div>
 </div>

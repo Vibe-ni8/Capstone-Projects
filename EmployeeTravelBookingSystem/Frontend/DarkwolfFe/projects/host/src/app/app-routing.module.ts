@@ -39,7 +39,7 @@ const routes: Routes = [
           tab:'Employee Travel Booking', 
           sideBarList: [
             {name:'Dashboard - Sharepoint', link:'/dashboard/details'},
-            {name:'Dashboard - Employee Travel Booking', link:'/employeeTravelBooking'},
+            {name:'Dashboard - Employee Travel Booking', link:'/employeeTravelBooking/dashboard'},
             {name:'Reports', link:'/dashboard/reports'},
             {name:'Settings', link:'/dashboard/settings'}
           ]

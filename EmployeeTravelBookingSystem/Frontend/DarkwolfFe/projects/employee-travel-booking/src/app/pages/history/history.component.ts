@@ -11,7 +11,7 @@ export class HistoryComponent {
   constructor(private travel:TravelService) {}
 
   items:any[] = [
-    {id:'23456', destination:'Bangalore', startDate:'32', endDate:'34', status:'approved'}
+    {id:'23456', fromCity:'Chennai', destination:'Bangalore', travelDate:'05-11-2025', status:'approved'}
   ];
   employeeId='emp-100';
 

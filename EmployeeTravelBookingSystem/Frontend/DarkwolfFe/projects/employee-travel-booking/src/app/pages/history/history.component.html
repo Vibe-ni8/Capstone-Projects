@@ -5,16 +5,18 @@
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>From City</th>
                     <th>Destination</th>
-                    <th>Dates</th>
+                    <th>Travel Date</th>
                     <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let i of items" (click)="open(i.id)">
                     <td>{{i.id}}</td>
+                    <td>{{i.fromCity}}</td>
                     <td>{{i.destination}}</td>
-                    <td>{{i.startDate}} - {{i.endDate }}</td>
+                    <td>{{i.travelDate}}</td>
                     <td>{{i.status}}</td>
                 </tr>
             </tbody>
