@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{250C7C18-CC1A-4402-BFB4-11A9004462D7}|Darkwolf.Shared.Authentication\\Darkwolf.Shared.Authentication.csproj|d:\\virtusa\\virtusa-capstone_projects\\employeetravelbookingsystem\\backend\\darkwolf.shared.solution\\darkwolf.shared.authentication\\filters\\requireauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{250C7C18-CC1A-4402-BFB4-11A9004462D7}|Darkwolf.Shared.Authentication\\Darkwolf.Shared.Authentication.csproj|solutionrelative:darkwolf.shared.authentication\\filters\\requireauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RequireAuth.cs",
-              "DocumentMoniker": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Authentication\\Filters\\RequireAuth.cs",
-              "RelativeDocumentMoniker": "Darkwolf.Shared.Authentication\\Filters\\RequireAuth.cs",
-              "ToolTip": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Authentication\\Filters\\RequireAuth.cs",
-              "RelativeToolTip": "Darkwolf.Shared.Authentication\\Filters\\RequireAuth.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T13:37:47.881Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

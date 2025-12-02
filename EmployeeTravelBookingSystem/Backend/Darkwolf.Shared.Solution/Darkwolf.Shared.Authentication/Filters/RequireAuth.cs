@@ -1,19 +1,20 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace HireHub.Shared.Authentication.Filters;
+namespace Darkwolf.Shared.Authentication.Filters;
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
 public class RequireAuthAttribute : Attribute, IAuthorizationFilter
 {
-    public string? Role { get; set; }
+    public string[] Roles { get; set; } = [];
 
     public RequireAuthAttribute() { }
 
-    public RequireAuthAttribute(string role)
+    public RequireAuthAttribute(string[] roles)
     {
-        Role = role;
+        Roles = roles;
     }
 
     public void OnAuthorization(AuthorizationFilterContext context)
@@ -30,8 +31,7 @@ public class RequireAuthAttribute : Attribute, IAuthorizationFilter
         }
 
         // Optional: check roles
-        if (!string.IsNullOrEmpty(Role) &&
-            !context.HttpContext.User.IsInRole(Role))
+        if (!(Roles.Length == 0) && !IsInRole(context.HttpContext.User))
         {
             context.HttpContext.Response.StatusCode = StatusCodes.Status403Forbidden;
             context.Result = new ContentResult
@@ -42,4 +42,15 @@ public class RequireAuthAttribute : Attribute, IAuthorizationFilter
             return;
         }
     }
+
+    private bool IsInRole(ClaimsPrincipal user)
+    {
+        foreach (string role in Roles)
+        {
+            if (user.IsInRole(role))
+                return true;
+        }
+        return false;
+    }
+
 }
