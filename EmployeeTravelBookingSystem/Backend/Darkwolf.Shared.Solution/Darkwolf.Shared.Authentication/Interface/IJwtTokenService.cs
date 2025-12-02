@@ -1,4 +1,6 @@
-﻿namespace Darkwolf.Shared.Authentication.Interface;
+﻿using System.Security.Claims;
+
+namespace Darkwolf.Shared.Authentication.Interface;
 
 public interface IJwtTokenService
 {
@@ -10,5 +12,5 @@ public interface IJwtTokenService
     /// <summary>
     /// Validates a JWT token and returns userId if valid.
     /// </summary>
-    string? ValidateToken(string token);
+    List<Claim>? ValidateToken(string token);
 }

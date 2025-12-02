@@ -10,3 +10,15 @@ C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingS
 C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\refint\Darkwolf.Shared.Authentication.dll
 C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.pdb
 C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\ref\Darkwolf.Shared.Authentication.dll
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\bin\Release\net8.0\Darkwolf.Shared.Authentication.deps.json
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\bin\Release\net8.0\Darkwolf.Shared.Authentication.dll
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\bin\Release\net8.0\Darkwolf.Shared.Authentication.pdb
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.csproj.AssemblyReference.cache
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.GeneratedMSBuildEditorConfig.editorconfig
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.AssemblyInfoInputs.cache
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.AssemblyInfo.cs
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.csproj.CoreCompileInputs.cache
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.dll
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\refint\Darkwolf.Shared.Authentication.dll
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\Darkwolf.Shared.Authentication.pdb
+D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\obj\Release\net8.0\ref\Darkwolf.Shared.Authentication.dll

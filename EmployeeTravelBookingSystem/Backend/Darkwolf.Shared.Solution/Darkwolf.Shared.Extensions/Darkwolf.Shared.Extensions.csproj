@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<Version>1.1.0</Version>
+	<Version>1.2.0</Version>
 	<PackageId>Darkwolf.Shared.Extensions</PackageId>
 	<Authors>Vicky</Authors>
 	<Company>Darkwolf</Company>
@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Darkwolf.Shared.Authentication" Version="1.0.0" />
+    <PackageReference Include="Darkwolf.Shared.Authentication" Version="1.1.0" />
     <PackageReference Include="Darkwolf.Shared.Common" Version="1.0.0" />
     <PackageReference Include="Darkwolf.Shared.Infrastructure" Version="1.0.0" />
     <PackageReference Include="Darkwolf.Shared.Logging" Version="1.0.0" />

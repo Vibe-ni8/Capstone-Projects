@@ -26,6 +26,7 @@ public class JwtTokenService : IJwtTokenService
             audience: _jwtSettings.Audiens[0],
             claims: [
                     new (ClaimTypes.NameIdentifier, userId),
+                    new (ClaimTypes.Name, userId),
                     new (ClaimTypes.Role, role)
              ],
             expires : DateTime.UtcNow.AddHours(_jwtSettings.ExpireInHours),
@@ -37,7 +38,7 @@ public class JwtTokenService : IJwtTokenService
         return tokenHandler.WriteToken(token);
     }
 
-    public string? ValidateToken(string token)
+    public List<Claim>? ValidateToken(string token)
     {
         if (string.IsNullOrEmpty(token))
             return null;
@@ -61,7 +62,7 @@ public class JwtTokenService : IJwtTokenService
             var jwtToken = (JwtSecurityToken)validatedToken;
             var userId = jwtToken.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
 
-            return userId;
+            return jwtToken.Claims.ToList();
         }
         catch
         {
