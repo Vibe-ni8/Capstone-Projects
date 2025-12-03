@@ -1,0 +1,10 @@
+<div class="app-header"><div class="hamburger">☰</div><div class="title">Booking Details</div><div class="profile">Server Error</div></div>
+<div class="app-container">
+<div class="page-card">
+<h2>Booking for {{item.employeeName}} - {{item.destination}}</h2>
+<div class="form-row"><label>Ticket Number</label><input [(ngModel)]="booking.ticketNumber"></div>
+<div class="form-row"><label>Vendor / Airline</label><input [(ngModel)]="booking.vendor"></div>
+<div class="form-row"><label>Departure</label><input [(ngModel)]="booking.departure"></div>
+<div style="margin-top:12px"><button class="button-primary" (click)="save()">Save Booking</button></div>
+</div>
+</div>

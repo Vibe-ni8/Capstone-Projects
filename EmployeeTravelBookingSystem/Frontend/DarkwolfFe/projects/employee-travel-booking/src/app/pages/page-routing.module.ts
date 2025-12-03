@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { RequestFormComponent } from './home/components/request-form/request-form.component';
-import { ApprovalListComponent } from './home/components/approval-list/approval-list.component';
-import { HistoryComponent } from './home/components/history/history.component';
+import { TravelDashboardComponent } from './travel-dashboard/travel-dashboard.component';
+import { NewRequestComponent } from './new-request/new-request.component';
+import { ApprovalsComponent } from './approvals/approvals.component';
+import { TravelDeskComponent } from './travel-desk/travel-desk.component';
+import { BookingDetailsComponent } from './booking-details/booking-details.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'home', pathMatch:'full'},
-  {
-    path: 'home',
-    component: HomeComponent,
-    children: [
-      { path: '', redirectTo: 'request', pathMatch: 'full' },
-      { path: 'request', component: RequestFormComponent },
-      { path: 'approvals', component: ApprovalListComponent },
-      { path: 'history', component: HistoryComponent }
-    ]
-  }
+  {path:'', redirectTo:'dashboard', pathMatch:'full'},
+  { path: 'dashboard', component: TravelDashboardComponent },
+  { path: 'new', component: NewRequestComponent },
+  { path: 'approvals', component: ApprovalsComponent },
+  { path: 'history', component: HistoryComponent },
+  { path: 'traveldesk', component: TravelDeskComponent },
+  { path: 'booking/:id', component: BookingDetailsComponent }
 ];
 
 @NgModule({

@@ -3,8 +3,8 @@
   <div class="profile-header">
     <img [src]="user.profileImage" alt="Profile" class="profile-image" />
     <div class="profile-info">
-      <h2>{{ user.name }}</h2>
-      <p class="role">{{ user.role }}</p>
+      <h2>{{ user.name ?? '-' }}</h2>
+      <p class="role">{{ user.role ?? '-' }} | {{ user.department ?? '-' }}</p>
     </div>
   </div>
 
@@ -23,18 +23,20 @@
   <div class="tab-content">
     <div *ngIf="activeTab === 'overview'">
       <h3>Profile Overview</h3>
-      <p><strong>Email:</strong> {{ user.contact.email }}</p>
-      <p><strong>Phone:</strong> {{ user.contact.phone }}</p>
-      <p><strong>Location:</strong> {{ user.contact.location }}</p>
-      <p *ngIf="user.organization.reportingTo"><strong>Reports to:</strong> {{ user.organization.reportingTo.name }}</p>
+      <p><strong>Email:</strong> {{ user.contact.email ?? '-' }}</p>
+      <p><strong>Phone:</strong> {{ user.contact.phone ?? '-' }}</p>
+      <p><strong>Location:</strong> {{ user.contact.location ?? '-' }}</p>
+      <p><strong>Reports to:</strong> {{ user.organization.reportingTo?.name ?? 'Not Assigned'}} ({{ user.organization.reportingTo?.email ?? '@' }}) - {{ user.organization.reportingTo?.role ?? '#' }}</p>
+      <p><strong>Home Manager:</strong> {{ user.organization.homeManager?.name ?? 'Not Assigned'}} ({{ user.organization.homeManager?.email ?? '@' }}) - {{ user.organization.homeManager?.role ?? '#' }}</p>
+      <p><strong>Work Manager:</strong> {{ user.organization.workManager?.name ?? 'Not Assigned'}} ({{ user.organization.workManager?.email ?? '@' }}) - {{ user.organization.workManager?.role ?? '#' }}</p>
     </div>
 
     <div *ngIf="activeTab === 'contact'">
       <h3>Contact Information</h3>
       <ul>
-        <li>Email: {{ user.contact.email }}</li>
-        <li>Phone: {{ user.contact.phone }}</li>
-        <li>Location: {{ user.contact.location }}</li>
+        <li>Email: {{ user.contact.email ?? '-' }}</li>
+        <li>Phone: {{ user.contact.phone ?? '-' }}</li>
+        <li>Location: {{ user.contact.location ?? '-' }}</li>
       </ul>
     </div>
 
@@ -45,6 +47,7 @@
         <div class="org-level" *ngIf="user.organization.reportingTo">
           <div class="person manager">
             <p class="name">{{ user.organization.reportingTo.name }}</p>
+            <p class="email">({{ user.organization.reportingTo.email }})</p>
             <p class="role">{{ user.organization.reportingTo.role }}</p>
           </div>
         </div>
@@ -54,6 +57,7 @@
             <div class="line up" *ngIf="user.organization.reportingTo"></div>
             <div class="line down" *ngIf="user.organization.reportsToHim.length > 0"></div>
             <p class="name">{{ user.name }}</p>
+            <p class="email">({{ user.contact?.email }})</p>
             <p class="role">{{ user.role }}</p>
           </div>
         </div>
@@ -63,6 +67,7 @@
             class="person" 
             *ngFor="let member of user.organization.reportsToHim">
             <p class="name">{{ member.name }}</p>
+            <p class="email">({{ member.email }})</p>
             <p class="role">{{ member.role }}</p>
           </div>
         </div>

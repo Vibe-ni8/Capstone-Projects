@@ -42,6 +42,23 @@ public class EmployeeRepository : IEmployeeRepository
             .FirstOrDefaultAsync();
     }
 
+    public async Task<Department?> FindDepartmentByIdAsync(string employeeId)
+    {
+        return await _db.Employees
+            .Where(e => employeeId.Equals(e.EmployeeId))
+            .Join(_db.Departments, e => e.DepartmentId, d => d.DepartmentId, (e, d) => d)
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<ServiceLine?> FindServiceLineByIdAsync(string employeeId)
+    {
+        return await _db.Employees
+            .Where(e => employeeId.Equals(e.EmployeeId))
+            .Join(_db.Departments, e => e.DepartmentId, d => d.DepartmentId, (e, d) => d)
+            .Join(_db.ServiceLines, d => d.ServiceLineId, sl => sl.ServiceLineId, (d, sl) => sl)
+            .FirstOrDefaultAsync();
+    }
+
     public async Task<Location?> FindLocationByIdAsync(string employeeId)
     {
         return await _db.Employees
@@ -53,8 +70,24 @@ public class EmployeeRepository : IEmployeeRepository
     public async Task<Employee?> FindUserReportsToAsync(string employeeId)
     {
         return await _db.EmployeeDetails
-            .Where(e => employeeId.Equals(e.EmpId))
+            .Where(e => employeeId.Equals(e.EmployeeId))
             .Join(_db.Employees, ed => ed.ReportingManagerId, e => e.EmployeeId, (ed, e) => e)
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<Employee?> FindUserHomeManagerAsync(string employeeId)
+    {
+        return await _db.EmployeeDetails
+            .Where(e => employeeId.Equals(e.EmployeeId))
+            .Join(_db.Employees, ed => ed.HomeManagerId, e => e.EmployeeId, (ed, e) => e)
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task<Employee?> FindUserWorkManagerAsync(string employeeId)
+    {
+        return await _db.EmployeeDetails
+            .Where(e => employeeId.Equals(e.EmployeeId))
+            .Join(_db.Employees, ed => ed.WorkManagerId, e => e.EmployeeId, (ed, e) => e)
             .FirstOrDefaultAsync();
     }
 
@@ -62,7 +95,7 @@ public class EmployeeRepository : IEmployeeRepository
     {
         return await _db.EmployeeDetails
             .Where(e => employeeId.Equals(e.ReportingManagerId))
-            .Join(_db.Employees, ed => ed.EmpId, e => e.EmployeeId, (ed, e) => e)
+            .Join(_db.Employees, ed => ed.EmployeeId, e => e.EmployeeId, (ed, e) => e)
             .ToListAsync();
     }
 
@@ -72,7 +105,7 @@ public class EmployeeRepository : IEmployeeRepository
             .Where(r => employee.RoleId.Equals(r.RoleId))
             .Select(r => new EmployeeWithRole()
             {
-                EmpId = employee.EmployeeId,
+                EmployeeId = employee.EmployeeId,
                 Name = employee.EmployeeName,
                 Email = employee.EmployeeEmail,
                 RoleId = employee.RoleId,
@@ -87,7 +120,7 @@ public class EmployeeRepository : IEmployeeRepository
             .Join(employees, r => r.RoleId, e => e.RoleId, (r, e) => new {e, r})
             .Select(joined => new EmployeeWithRole()
             {
-                EmpId = joined.e.EmployeeId,
+                EmployeeId = joined.e.EmployeeId,
                 Name = joined.e.EmployeeName,
                 Email = joined.e.EmployeeEmail,
                 RoleId = joined.e.RoleId,

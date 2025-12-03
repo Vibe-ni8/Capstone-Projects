@@ -16,9 +16,6 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "@employeeTravelBooking/*": [
-        "projects/employeeTravelBooking/src/*"
-      ],
       "@host/*": [
         "projects/host/src/*"
       ],

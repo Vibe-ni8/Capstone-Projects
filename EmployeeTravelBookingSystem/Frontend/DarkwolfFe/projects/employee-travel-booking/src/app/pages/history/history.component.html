@@ -1,0 +1,25 @@
+<div class="app-container">
+    <div class="page-card">
+        <h2>History</h2>
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>From City</th>
+                    <th>Destination</th>
+                    <th>Travel Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of items" (click)="open(i.id)">
+                    <td>{{i.id}}</td>
+                    <td>{{i.fromCity}}</td>
+                    <td>{{i.destination}}</td>
+                    <td>{{i.travelDate}}</td>
+                    <td>{{i.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

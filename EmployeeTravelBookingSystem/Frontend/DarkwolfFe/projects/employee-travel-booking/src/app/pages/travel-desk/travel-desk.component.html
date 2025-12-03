@@ -1,0 +1,10 @@
+<div class="app-header"><div class="hamburger">☰</div><div class="title">Travel Desk</div><div class="profile">Server Error</div></div>
+<div class="app-container">
+<div class="page-card">
+<h2>Requests to Book</h2>
+<div *ngFor="let p of pending" style="padding:12px 0; border-bottom:1px solid var(--border-color)">
+<div><strong>{{p.employeeName}}</strong> - {{p.destination}}</div>
+<div style="margin-top:8px"><a [routerLink]="['/booking', p.id]">Open Booking</a></div>
+</div>
+</div>
+</div>

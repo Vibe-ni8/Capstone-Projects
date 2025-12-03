@@ -1,37 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E8E512CF-9F33-4847-8DF2-20BE36DD7770}|Darkwolf.Shared.Extensions\\Darkwolf.Shared.Extensions.csproj|c:\\users\\vigne\\onedrive\\desktop\\virtusa-capstone_projects\\employeetravelbookingsystem\\backend\\darkwolf.shared.solution\\darkwolf.shared.extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8E512CF-9F33-4847-8DF2-20BE36DD7770}|Darkwolf.Shared.Extensions\\Darkwolf.Shared.Extensions.csproj|solutionrelative:darkwolf.shared.extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\Virtusa\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "Darkwolf.Shared.Extensions\\ServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\vigne\\OneDrive\\Desktop\\VIRTUSA-Capstone_Projects\\EmployeeTravelBookingSystem\\Backend\\Darkwolf.Shared.Solution\\Darkwolf.Shared.Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeToolTip": "Darkwolf.Shared.Extensions\\ServiceCollectionExtensions.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAqwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T18:53:22.099Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

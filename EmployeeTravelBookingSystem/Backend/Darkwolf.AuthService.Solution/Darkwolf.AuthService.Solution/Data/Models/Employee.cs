@@ -26,7 +26,7 @@ public class Employee : BaseEntity
     public string RoleId { get; set; } = null!;
 
     [Column("dept_id")]
-    public string DeptId { get; set; } = null!;
+    public string DepartmentId { get; set; } = null!;
 
     [Column("reset_token")]
     public string? ResetToken { get; set; } = null;

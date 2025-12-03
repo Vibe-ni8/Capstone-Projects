@@ -1,4 +1,5 @@
-﻿using Darkwolf.AuthService.Solution.Service;
+﻿using Darkwolf.AuthService.Solution.Data.Models;
+using Darkwolf.AuthService.Solution.Service;
 using Darkwolf.AuthService.Solution.Utils.Common;
 using Darkwolf.Shared.Logging.Interface;
 using Darkwolf.Shared.Middleware.Models;
@@ -43,8 +44,9 @@ public class UserController : Controller
             UserId = user.EmployeeId,
             Name = user.EmployeeName,
             Email = user.EmployeeEmail,
+            RoleId = user.RoleId,
             Role = role?.RoleName,
-            DepartmentId = user.DeptId,
+            DepartmentId = user.DepartmentId,
             Phone = user.Phone,
             Location = user.LocationId
         });
@@ -71,6 +73,10 @@ public class UserController : Controller
         var location = await _userProviderService.CurrentUserLocation;
         var reportingTo = await _userProviderService.CurrentUserReportsTo;
         var reportsToHim = await _userProviderService.UsersReportsToCurrentUser;
+        var homeManager = await _userProviderService.CurrentUserHomeManager;
+        var workManager = await _userProviderService.CurrentUserWorkManager;
+        var department = await _userProviderService.CurrentUserDepartment;
+        var serviceLine = await _userProviderService.CurrentUserServiceLine;
 
         _logger.LogInfo(LogMessage.EndMethod, nameof(GetAllInfo));
 
@@ -78,8 +84,12 @@ public class UserController : Controller
         {
             UserId = user.EmployeeId,
             Name = user.EmployeeName,
+            RoleId = user.RoleId,
             Role = role?.RoleName,
-            DepartmentId = user.DeptId,
+            DepartmentId = user.DepartmentId,
+            Department = department?.DepartmentName,
+            ServiceLineId = department?.ServiceLineId,
+            ServiceLine = serviceLine?.ServiceLineName,
             Contact = new
             {
                 Email = user.EmployeeEmail,
@@ -89,7 +99,9 @@ public class UserController : Controller
             Organization = new
             {
                 ReportingTo = reportingTo,
-                ReportsToHim = reportsToHim
+                ReportsToHim = reportsToHim,
+                HomeManager = homeManager,
+                WorkManager = workManager
             }
         });
     }

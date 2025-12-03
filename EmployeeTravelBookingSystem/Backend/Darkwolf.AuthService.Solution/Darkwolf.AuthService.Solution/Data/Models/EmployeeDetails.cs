@@ -11,7 +11,7 @@ public class EmployeeDetails : BaseEntity
 
     [Key]
     [Column("emp_id")]
-    public string EmpId { get; set; } = null!;
+    public string EmployeeId { get; set; } = null!;
 
     [Column("reporting_mgr_id")]
     public string ReportingManagerId { get; set; } = null!;

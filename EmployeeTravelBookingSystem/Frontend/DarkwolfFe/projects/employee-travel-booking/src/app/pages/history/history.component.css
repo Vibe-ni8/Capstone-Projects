@@ -1,0 +1,43 @@
+.app-container { 
+    padding:28px 40px; 
+}
+
+.page-card { 
+    background:var(--card-bg); 
+    border-radius:14px; 
+    padding:20px; 
+    box-shadow:0 6px 18px var(--box-shadow-color); 
+    border:1px solid var(--border-color); 
+}
+
+.page-card table {
+  border-collapse: collapse; 
+  width: 100%;
+}
+
+.page-card thead {
+    border-bottom: 3px double var(--border-color-secondary); 
+}
+
+.page-card th {
+    text-align: start;
+    padding-bottom: 10px;
+}
+
+.page-card tbody {
+    color: var(--text-color-secondary);
+}
+
+.page-card td {
+    text-align: start;
+    border-bottom: 1px solid var(--border-color);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+.page-card tbody tr:hover {
+    background:var(--hover-bg-color);
+}

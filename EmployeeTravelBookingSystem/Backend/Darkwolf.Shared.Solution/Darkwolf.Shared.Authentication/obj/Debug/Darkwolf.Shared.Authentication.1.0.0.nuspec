@@ -9,11 +9,12 @@
     <dependencies>
       <group targetFramework="net8.0">
         <dependency id="Microsoft.AspNetCore.Http.Abstractions" version="2.3.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Mvc.Core" version="2.3.0" exclude="Build,Analyzers" />
         <dependency id="System.IdentityModel.Tokens.Jwt" version="8.14.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\vigne\OneDrive\Desktop\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\bin\Debug\net8.0\Darkwolf.Shared.Authentication.dll" target="lib\net8.0\Darkwolf.Shared.Authentication.dll" />
+    <file src="D:\Virtusa\VIRTUSA-Capstone_Projects\EmployeeTravelBookingSystem\Backend\Darkwolf.Shared.Solution\Darkwolf.Shared.Authentication\bin\Debug\net8.0\Darkwolf.Shared.Authentication.dll" target="lib\net8.0\Darkwolf.Shared.Authentication.dll" />
   </files>
 </package>
